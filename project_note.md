@@ -6,8 +6,13 @@
 *Restore from checkpoint*  
 ./build/ARM/gem5.opt configs/spec2k6/run.py -b gcc --at-instruction -r 10000 -I 10000 --l1d_size=64kB --l1i_size=16kB --caches --l2cache --checkpoint-dir=./checkpoints  
 
+*Switching from timing to O3 CPU*  
+./build/ARM/gem5.opt configs/spec2k6/run.py --maxinsts=250000 --cpu-type=DerivO3CPU --l1d_size=64kB --l1i_size=16kB --caches --l2cache  -b gcc -W 1000 --standard-switch 1000  
+
+
 *Reference*    
 https://www.gem5.org/documentation/general_docs/checkpoints/  
 https://gem5-users.gem5.narkive.com/F0rkgfb8/question-on-creating-restoring-checkpoint-for-a-specific-number-of-instructions  
 https://www.cnblogs.com/lcchuguo/p/4634147.html  
+https://blog.csdn.net/fandroid/article/details/46047103  
 
