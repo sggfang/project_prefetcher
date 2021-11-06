@@ -483,6 +483,24 @@ class STeMSPrefetcher(QueuedPrefetcher):
     reconstruction_entries = Param.Unsigned(256,
         "Number of reconstruction entries")
 
+class TIFSPrefetcher(QueuedPrefetcher):
+    type = "TIFSPrefetcher"
+    cxx_class = "Prefetcher::TIFS"
+    cxx_header = "mem/cache/prefetch/tifs.hh"
+
+    inTable_entries = Param.MemorySize("64",
+        "Number of entries in the active generation table")
+    inTable_assoc = Param.Unsigned(64,
+        "Associativity of the active generation table")
+    inTable_indexing_policy = Param.BaseIndexingPolicy(
+        SetAssociative(entry_size = 1,
+            assoc = Parent.inTable_assoc,
+            size = Parent.inTable_entries),
+        "Indexing policy of the active generation table")
+    inTable_replacement_policy = Param.BaseReplacementPolicy(
+        LRURP(), "Replacement policy of the active generation table")
+    InstructionMiss_entries = Param.Unsigned(1024, "# of entries of instruction miss log")
+
 class HWPProbeEventRetiredInsts(HWPProbeEvent):
     def register(self):
         if self.obj:
