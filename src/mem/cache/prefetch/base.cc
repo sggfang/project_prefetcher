@@ -129,15 +129,38 @@ Base::observeAccess(const PacketPtr &pkt, bool miss) const
     bool read = pkt->isRead();
     bool inv = pkt->isInvalidate();
 
-    if (pkt->req->isUncacheable()) return false;
-    if (fetch && !onInst) return false;
-    if (!fetch && !onData) return false;
-    if (!fetch && read && !onRead) return false;
-    if (!fetch && !read && !onWrite) return false;
-    if (!fetch && !read && inv) return false;
-    if (pkt->cmd == MemCmd::CleanEvict) return false;
+    if (pkt->req->isUncacheable()){
+				// printf("un cacheable\n");
+				return false;
+		}
+    if (fetch && !onInst) {
+		//				printf("fetch but not on inst\n");
+			//			printf("fetch == %d  not oninst == %d\n", fetch, !onInst);
+						return false;
+		}
+    if (!fetch && !onData) {
+		//				printf("not on data\n");
+						return false;
+		}
+    if (!fetch && read && !onRead){
+		//				printf("read and not on read\n");
+						return false;
+		}
+    if (!fetch && !read && !onWrite) {
+		//				printf("not read nad not on write\n");
+						return false;
+		}
+    if (!fetch && !read && inv) {
+		//				printf("not read and inv\n");
+						return false;
+		}
+    if (pkt->cmd == MemCmd::CleanEvict) {
+		//				printf("clean evict\n");
+						return false;
+		}
 
     if (onMiss) {
+			//	printf("find miss\n");
         return miss;
     }
 
@@ -220,6 +243,7 @@ Base::probeNotify(const PacketPtr &pkt, bool miss)
             PrefetchInfo pfi(pkt, pkt->req->getVaddr(), miss);
             notify(pkt, pfi);
         } else if (!useVirtualAddresses) {
+						printf("notify prefetcher\n");
             PrefetchInfo pfi(pkt, pkt->req->getPaddr(), miss);
             notify(pkt, pfi);
         }
