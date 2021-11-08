@@ -18,7 +18,7 @@
 
 namespace Prefetcher {
 
-FDIP::FDIP(const StridePrefetcherParams *p)
+FDIP::FDIP(const FDIPPrefetcherParams *p)
   : Queued(p),
   enqueuePC(nullptr)
 {
@@ -34,5 +34,12 @@ void
 FDIP::calculatePrefetch(const PrefetchInfo &pfi,
                                     std::vector<AddrPriority> &addresses)
 {
+	return NULL;
+}
 
+} // namespace prefetcher
+
+Prefetcher::FDIP* 
+FDIPPrefetcherParams::create(){
+		return new Prefetcher::FDIP(this);
 }
