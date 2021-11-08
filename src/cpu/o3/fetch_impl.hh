@@ -80,6 +80,8 @@ DefaultFetch<Impl>::DefaultFetch(O3CPU *_cpu, DerivO3CPUParams *params)
     : fetchPolicy(params->smtFetchPolicy),
       cpu(_cpu),
       branchPred(nullptr),
+      // Ni: Added fdip
+      fdipPrefetch(nullptr),
       decodeToFetchDelay(params->decodeToFetchDelay),
       renameToFetchDelay(params->renameToFetchDelay),
       iewToFetchDelay(params->iewToFetchDelay),
@@ -136,6 +138,8 @@ DefaultFetch<Impl>::DefaultFetch(O3CPU *_cpu, DerivO3CPUParams *params)
     }
 
     branchPred = params->branchPred;
+    // Ni: Added fdip
+    fdipPrefetch = params->fdipPrefetch;
 
     for (ThreadID tid = 0; tid < numThreads; tid++) {
         decoder[tid] = new TheISA::Decoder(
@@ -570,6 +574,9 @@ DefaultFetch<Impl>::lookupAndUpdateNextPC(
     ThreadID tid = inst->threadNumber;
     predict_taken = branchPred->predict(inst->staticInst, inst->seqNum,
                                         nextPC, tid);
+
+    // Ni: Send nextPC to FTQ
+    fdipPrefetch->setPC(nextPC);
 
     if (predict_taken) {
         DPRINTF(Fetch, "[tid:%i] [sn:%llu] Branch at PC %#x "

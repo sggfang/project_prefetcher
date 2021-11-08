@@ -172,6 +172,12 @@ class StridePrefetcher(QueuedPrefetcher):
     table_replacement_policy = Param.BaseReplacementPolicy(RandomRP(),
         "Replacement policy of the PC table")
 
+# Ni: Added for FDIP Instruction Prefetcher
+class FDIPPrefetcher(QueuedPrefetcher):
+    type = 'FDIPPrefetcher'
+    cxx_class = 'Prefetcher::FDIP'
+    cxx_header = "mem/cache/prefetch/fdip.hh"
+
 class TaggedPrefetcher(QueuedPrefetcher):
     type = 'TaggedPrefetcher'
     cxx_class = 'Prefetcher::Tagged'

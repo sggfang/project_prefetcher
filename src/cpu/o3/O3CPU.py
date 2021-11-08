@@ -47,6 +47,9 @@ from m5.objects.FUPool import *
 from m5.objects.O3Checker import O3Checker
 from m5.objects.BranchPredictor import *
 
+# Ni: Added fdip (* for now, can change to FDIPPrefetcher)
+from m5.objects.Prefetcher import *
+
 class FetchPolicy(ScopedEnum):
     vals = [ 'SingleThread', 'RoundRobin', 'Branch', 'IQCount', 'LSQCount' ]
 
@@ -174,6 +177,10 @@ class DerivO3CPU(BaseCPU):
     branchPred = Param.BranchPredictor(TournamentBP(numThreads =
                                                        Parent.numThreads),
                                        "Branch Predictor")
+
+    # Ni: Added fdip
+    fdipPrefetch = Param.Prefetcher(FDIPPrefetcher(), "FDIP Prefetcher")
+
     needsTSO = Param.Bool(buildEnv['TARGET_ISA'] == 'x86',
                           "Enable TSO Memory model")
 

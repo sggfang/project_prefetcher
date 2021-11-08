@@ -55,6 +55,9 @@
 #include "sim/eventq.hh"
 #include "sim/probe/probe.hh"
 
+// Ni: Include the prefetch unit for passing target PC
+#include "mem/cache/prefetch/fdip.hh"
+
 struct DerivO3CPUParams;
 template <class Impl>
 class FullO3CPU;
@@ -431,6 +434,9 @@ class DefaultFetch
 
     /** BPredUnit. */
     BPredUnit *branchPred;
+
+    // Ni: FDIP Unit
+    FDIP* fdipPrefetch;
 
     TheISA::PCState pc[Impl::MaxThreads];
 
