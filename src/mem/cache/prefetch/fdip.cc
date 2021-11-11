@@ -19,22 +19,25 @@
 namespace Prefetcher {
 
 FDIP::FDIP(const FDIPPrefetcherParams *p)
-  : Queued(p),
-  enqueuePC(nullptr)
+  : Queued(p)
+  //enqueuePC(nullptr)
 {
 }
 
-void
-FDIP::setPC(theISA::PCState &nextPC) {
+/*void
+FDIP::setPC(TheISA::PCState &nextPC) {
     enqueuePC = &nextPC;
-    printf("btb returned: uld\n", enqueuePC->pc())；
-}
+    printf("btb returned: %lu\n", enqueuePC->pc());
+}*/
 
 void
 FDIP::calculatePrefetch(const PrefetchInfo &pfi,
                                     std::vector<AddrPriority> &addresses)
 {
-	return NULL;
+	if (setPC::enqueuePC != -1) {
+		addresses.push_back(AddrPriority(setPC::enqueuePC, 0));
+		setPC::enqueuePC = -1;
+	}	
 }
 
 } // namespace prefetcher

@@ -56,7 +56,8 @@
 #include "sim/probe/probe.hh"
 
 // Ni: Include the prefetch unit for passing target PC
-#include "mem/cache/prefetch/fdip.hh"
+//#include "mem/cache/prefetch/fdip.hh"
+#include "mem/cache/prefetch/setPC.hh"
 
 struct DerivO3CPUParams;
 template <class Impl>
@@ -435,8 +436,8 @@ class DefaultFetch
     /** BPredUnit. */
     BPredUnit *branchPred;
 
-    // Ni: FDIP Unit
-    FDIP* fdipPrefetch;
+    // Ni: setPC Unit
+    // setPC* set_pc;
 
     TheISA::PCState pc[Impl::MaxThreads];
 

@@ -18,6 +18,9 @@
 #include "mem/cache/tags/indexing_policies/set_associative.hh"
 #include "mem/packet.hh"
 
+#include "config/the_isa.hh"
+#include "mem/cache/prefetch/setPC.hh"
+
 class BaseIndexingPolicy;
 class BaseReplacementPolicy;
 struct FDIPPrefetcherParams;
@@ -31,9 +34,9 @@ class FDIP : public Queued
   public:
     FDIP(const FDIPPrefetcherParams *p);
 
-    theISA::PCState* enqueuePC;
+    //TheISA::PCState* enqueuePC;
 
-    void setPC(theISA::PCState &nextPC);
+    //void setPC(TheISA::PCState &nextPC) override;
 
     void calculatePrefetch(const PrefetchInfo &pfi,
                            std::vector<AddrPriority> &addresses) override;

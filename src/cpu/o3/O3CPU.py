@@ -179,7 +179,7 @@ class DerivO3CPU(BaseCPU):
                                        "Branch Predictor")
 
     # Ni: Added fdip
-    fdipPrefetch = Param.BasePrefetcher(FDIPPrefetcher(), "FDIP prefetcher")
+    #fdipPrefetch = Param.BasePrefetcher(FDIPPrefetcher(), "FDIP prefetcher")
 
     needsTSO = Param.Bool(buildEnv['TARGET_ISA'] == 'x86',
                           "Enable TSO Memory model")
