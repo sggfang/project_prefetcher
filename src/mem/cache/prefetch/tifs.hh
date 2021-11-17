@@ -67,21 +67,29 @@ class TIFS : public Queued
 	CircularQueue<InstructionMissLogEntry> InstructionMissLog;
 
 	void addToInstructionMissLog(Addr addr, bool hit);
+	void updateInstructionMissLog(Addr addr, bool hit);
 	 
 	struct IndexTableEntry:public TaggedEntry{
 		Addr address;
-
-		IndexTableEntry():TaggedEntry(),address(0){
+		Addr pc;
+		IndexTableEntry():TaggedEntry(),address(0),pc(0){
 		
 		}
 
 		void invalidate() override{
 			TaggedEntry::invalidate();
-			address = 0;				
-		}	
+			address = 0;		
+			pc = 0;		
+		}
+		
+		void update(IndexTableEntry const &e){
+			address = e.address;
+			pc = e.pc;				
+		}
 	};
 	
 	AssociativeSet<IndexTableEntry> inTable;
+
 	// std::unordered_map<int, INTable> inTables;
 
 	// INTable* findIndexTable(int core_num);

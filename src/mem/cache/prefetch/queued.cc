@@ -60,6 +60,7 @@ Queued::DeferredPacket::createPkt(Addr paddr, unsigned blk_size,
         req->setFlags(Request::SECURE);
     }
     req->taskId(ContextSwitchTaskId::Prefetcher);
+		// printf("create pkt with hardPFreq\n");
     pkt = new Packet(req, MemCmd::HardPFReq);
     pkt->allocate();
     if (tag_prefetch && pfInfo.hasPC()) {
@@ -139,6 +140,20 @@ Queued::getMaxPermittedPrefetches(size_t total) const
     return max_pfs;
 }
 
+bool
+Queued::checkInQueue(const PacketPtr &pkt){
+		bool found = false;
+		iterator it;
+		if(pfq.size() != 0){
+				printf("pfq size == %lu\n", pfq.size());
+		}
+		for (it = pfq.begin();it != pfq.end()&&!found; it++){
+				printf("pfq address: %lu\tpacket address: %lu\n", it->pfInfo.getPaddr(), pkt->getAddr());
+				found = it->pfInfo.getPaddr() == pkt->getAddr();
+		}
+		return found;
+}
+
 void
 Queued::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
 {
@@ -162,14 +177,15 @@ Queued::notify(const PacketPtr &pkt, const PrefetchInfo &pfi)
     // Calculate prefetches given this access
     std::vector<AddrPriority> addresses;
     calculatePrefetch(pfi, addresses);
-
+		
     // Get the maximu number of prefetches that we are allowed to generate
     size_t max_pfs = getMaxPermittedPrefetches(addresses.size());
 
     // Queue up generated prefetches
     size_t num_pfs = 0;
     for (AddrPriority& addr_prio : addresses) {
-
+				
+				// printf("address: %lu\n", addr_prio.first);
         // Block align prefetch address
         addr_prio.first = blockAddress(addr_prio.first);
 
@@ -415,6 +431,7 @@ Queued::insert(const PacketPtr &pkt, PrefetchInfo &new_pfi,
         } else {
             // Using PA for training but the request does not have a VA,
             // unable to process this page crossing prefetch.
+						printf("do not have virtual address\n");
             return;
         }
     }
@@ -431,6 +448,7 @@ Queued::insert(const PacketPtr &pkt, PrefetchInfo &new_pfi,
     DeferredPacket dpp(this, new_pfi, 0, priority);
     if (has_target_pa) {
         Tick pf_time = curTick() + clockPeriod() * latency;
+				// printf("prefetch time %lu\n", pf_time);
         dpp.createPkt(target_paddr, blkSize, masterId, tagPrefetch, pf_time);
         DPRINTF(HWPrefetch, "Prefetch queued. "
                 "addr:%#x priority: %3d tick:%lld.\n",
@@ -491,6 +509,7 @@ Queued::addToQueue(std::list<DeferredPacket> &queue,
             it++;
         queue.insert(it, dpp);
     }
+		// printf("size after insertion: %lu\n", queue.size());
 }
 
 } // namespace Prefetcher

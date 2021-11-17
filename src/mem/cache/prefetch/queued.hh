@@ -181,6 +181,8 @@ class Queued : public Base
     virtual ~Queued();
 
     void notify(const PacketPtr &pkt, const PrefetchInfo &pfi) override;
+	
+		bool checkInQueue(const PacketPtr &pkt) override;
 
     void insert(const PacketPtr &pkt, PrefetchInfo &new_pfi, int32_t priority);
 

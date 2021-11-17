@@ -75,6 +75,17 @@ TIFS::addToInstructionMissLog(Addr addr, bool hit){
 }
 
 void
+TIFS::updateInstructionMissLog(Addr addr, bool hit){
+		auto it = InstructionMissLog.end();
+		while(it != InstructionMissLog.begin()){
+				if (addr == it->retiredAddress){
+						it->hit_from_svb = hit;
+				}
+				it--;
+		}
+}
+
+void
 TIFS::calculatePrefetch(const PrefetchInfo &pfi,
                         std::vector<AddrPriority> &addresses)
 {
@@ -85,13 +96,33 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 
     // Get required packet info
     Addr pf_addr = pfi.getPaddr();
-    // Addr pc = pfi.getPC();
+    Addr pc = pfi.getPC();
     bool is_secure = pfi.isSecure();
+		bool is_miss = pfi.isCacheMiss();
 
     // Search for entry in the index table
     IndexTableEntry *entry = inTable.findEntry(pf_addr, is_secure);
 
-    if (entry != nullptr) {
+		if (entry == nullptr) {
+				entry = inTable.findVictim(pf_addr);
+				if (entry == nullptr){
+						printf("entry cannot be nullptr\n");
+						assert(false);
+				}
+				inTable.insertEntry(pf_addr, is_secure,entry);
+				entry->address = pf_addr; 
+				entry->pc = pc;
+
+				addToInstructionMissLog(pf_addr, false);
+    }
+
+		if (!is_miss){
+				printf("not miss\n");
+				updateInstructionMissLog(pf_addr, true);
+				return;
+		}
+
+    if (true) {
         inTable.accessEntry(entry);
 				
 				auto it = InstructionMissLog.end();
@@ -103,23 +134,13 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 								break;
 						}
 				}
-				while(it->hit_from_svb){
+				do{
+						if (!it->hit_from_svb) break;
 						addresses.push_back(AddrPriority(it->retiredAddress, 0));
 						it++;
-				}
-    } else {
-				// printf("The missed address is inserted to the index table!!!\n");
-				entry = inTable.findVictim(pf_addr);
-				if (entry == nullptr){
-						printf("entry cannot be nullptr\n");
-						assert(false);
-				}
-				inTable.insertEntry(pf_addr, is_secure,entry);
-				entry->address = pf_addr; 
-
-				addToInstructionMissLog(pf_addr, false);
-				// assert(false);
-    }
+				}while(it!=InstructionMissLog.end());
+		}
+		// printf("prefetched addr size %lu\n", addresses.size()); 
 }
 } // namespace Prefetcher
 

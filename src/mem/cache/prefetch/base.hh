@@ -349,6 +349,10 @@ class Base : public ClockedObject
 
     virtual Tick nextPrefetchReadyTime() const = 0;
 
+		virtual bool checkInQueue(const PacketPtr &ptr){
+						return false;
+		}
+
     /**
      * Register local statistics.
      */

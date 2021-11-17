@@ -691,6 +691,7 @@ Cache::serviceMSHRTargets(MSHR *mshr, const PacketPtr pkt, CacheBlk *blk)
         !mshr->wasWholeLineWrite;
 
     MSHR::TargetList targets = mshr->extractServiceableTargets(pkt);
+		// printf("target list size = %lu\n", targets.size());
     for (auto &target: targets) {
         Packet *tgt_pkt = target.pkt;
         switch (target.source) {

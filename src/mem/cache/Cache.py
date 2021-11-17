@@ -43,6 +43,7 @@ from m5.SimObject import SimObject
 from m5.objects.ClockedObject import ClockedObject
 from m5.objects.Compressors import BaseCacheCompressor
 from m5.objects.Prefetcher import BasePrefetcher
+from m5.objects.Prefetcher import TIFSPrefetcher
 from m5.objects.ReplacementPolicies import *
 from m5.objects.Tags import *
 

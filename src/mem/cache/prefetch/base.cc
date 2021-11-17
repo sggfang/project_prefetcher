@@ -243,7 +243,7 @@ Base::probeNotify(const PacketPtr &pkt, bool miss)
             PrefetchInfo pfi(pkt, pkt->req->getVaddr(), miss);
             notify(pkt, pfi);
         } else if (!useVirtualAddresses) {
-						printf("notify prefetcher\n");
+						// printf("notify prefetcher\n");
             PrefetchInfo pfi(pkt, pkt->req->getPaddr(), miss);
             notify(pkt, pfi);
         }

@@ -365,8 +365,12 @@ BaseCache::recvTimingReq(PacketPtr pkt)
         // notify before anything else as later handleTimingReqHit might turn
         // the packet in a response
         ppHit->notify(pkt);
-
+				
+				// printf("find hit blk\n");
+				if (!prefetcher)printf("no prefetcher\n");
+				if (!blk) printf("no blk\n");
         if (prefetcher && blk && blk->wasPrefetched()) {
+						printf("blk from prefetcher\n");
             blk->status &= ~BlkHWPrefetched;
         }
 
@@ -381,6 +385,7 @@ BaseCache::recvTimingReq(PacketPtr pkt)
         // track time of availability of next prefetch, if any
         Tick next_pf_time = prefetcher->nextPrefetchReadyTime();
         if (next_pf_time != MaxTick) {
+						// printf("next pf time: %lu\n", next_pf_time);
             schedMemSideSendEvent(next_pf_time);
         }
     }
@@ -1276,12 +1281,30 @@ BaseCache::access(PacketPtr pkt, CacheBlk *&blk, Cycles &lat,
 
     // Can't satisfy access normally... either no block (blk == nullptr)
     // or have block but need writable
+		// if (prefetcher == nullptr){
+			//	printf("no prefetcher\n");				
+		//}
+
+		/*
+		if (prefetcher->checkInQueue(pkt)){
+				incHitCount(pkt);				
+				Cycles temp_lat(1);
+				printf("Hit in prefetcher buffer\n");
+   			lat = calculateAccessLatency(blk, pkt->headerDelay, tag_latency) + temp_lat;
+				// if (compressor){
+					//	lat += compressor->getDecompressionLatency(blk);
+				// }
+				return true;
+		}else{
+    		incMissCount(pkt);
+    		lat = calculateAccessLatency(blk, pkt->headerDelay, tag_latency);
+		}
+		*/
 
     incMissCount(pkt);
-
     lat = calculateAccessLatency(blk, pkt->headerDelay, tag_latency);
-
-    if (!blk && pkt->isLLSC() && pkt->isWrite()) {
+    
+		if (!blk && pkt->isLLSC() && pkt->isWrite()) {
         // complete miss on store conditional... just give up now
         pkt->req->setExtraData(0);
         return true;
@@ -2114,8 +2137,10 @@ BaseCache::CacheStats::regStats()
     overallMissLatency.flags(total | nozero | nonan);
     overallMissLatency = demandMissLatency + SUM_NON_DEMAND(missLatency);
     for (int i = 0; i < max_masters; i++) {
+				//printf("%s\n", system->getMasterName(i).c_str());
         overallMissLatency.subname(i, system->getMasterName(i));
     }
+		//printf("\n\n");
 
     demandAccesses.flags(total | nozero | nonan);
     demandAccesses = demandHits + demandMisses;
