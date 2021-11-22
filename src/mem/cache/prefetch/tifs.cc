@@ -57,7 +57,7 @@ namespace Prefetcher {
 
 TIFS::TIFS(const TIFSPrefetcherParams *p)
   : Queued(p),
-	InstructionMissLog(p->InstructionMiss_entries),
+	// InstructionMissLog(p->InstructionMiss_entries),
 	inTable(p->inTable_entries, 
 					p->inTable_assoc,
 					p->inTable_indexing_policy, 
@@ -98,7 +98,7 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
     Addr pf_addr = pfi.getPaddr();
     Addr pc = pfi.getPC();
     bool is_secure = pfi.isSecure();
-		bool is_miss = pfi.isCacheMiss();
+	//	bool is_miss = pfi.isCacheMiss();
 
     // Search for entry in the index table
     IndexTableEntry *entry = inTable.findEntry(pf_addr, is_secure);
@@ -115,13 +115,12 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 
 				addToInstructionMissLog(pf_addr, false);
     }
-
+/*
 		if (!is_miss){
-				printf("not miss\n");
 				updateInstructionMissLog(pf_addr, true);
 				return;
 		}
-
+*/
     if (true) {
         inTable.accessEntry(entry);
 				
@@ -140,7 +139,7 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 						it++;
 				}while(it!=InstructionMissLog.end());
 		}
-		// printf("prefetched addr size %lu\n", addresses.size()); 
+		 // printf("prefetched addr size %lu\n", addresses.size()); 
 }
 } // namespace Prefetcher
 

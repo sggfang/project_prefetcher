@@ -89,7 +89,8 @@ Base::PrefetchListener::notify(const PacketPtr &pkt)
 }
 
 Base::Base(const BasePrefetcherParams *p)
-    : ClockedObject(p), listeners(), cache(nullptr), blkSize(p->block_size),
+    : ClockedObject(p), listeners(),InstructionMissLog(16384),
+		  cache(nullptr), blkSize(p->block_size),
       lBlkSize(floorLog2(blkSize)), onMiss(p->on_miss), onRead(p->on_read),
       onWrite(p->on_write), onData(p->on_data), onInst(p->on_inst),
       masterId(p->sys->getMasterId(this)), pageBytes(p->sys->getPageBytes()),
@@ -97,6 +98,7 @@ Base::Base(const BasePrefetcherParams *p)
       useVirtualAddresses(p->use_virtual_addresses), issuedPrefetches(0),
       usefulPrefetches(0), tlb(nullptr)
 {
+		
 }
 
 void
@@ -235,6 +237,7 @@ Base::probeNotify(const PacketPtr &pkt, bool miss)
 
     if (hasBeenPrefetched(pkt->getAddr(), pkt->isSecure())) {
         usefulPrefetches += 1;
+				printf("find prefetched blk\n");
     }
 
     // Verify this access type is observed by prefetcher
@@ -247,7 +250,22 @@ Base::probeNotify(const PacketPtr &pkt, bool miss)
             PrefetchInfo pfi(pkt, pkt->req->getPaddr(), miss);
             notify(pkt, pfi);
         }
-    }
+    }else{
+				//printf("update %lu \n",pkt->req->getPaddr());
+				updateInstructionMissLog(pkt->req->getPaddr(), true);
+		}
+}
+
+void
+Base::updateInstructionMissLog(Addr addr, bool hit){
+		auto it = InstructionMissLog.end();
+		while(it != InstructionMissLog.begin()){
+						if (addr == it->retiredAddress){
+										it->hit_from_svb = hit;
+										break;
+						}
+						it--;
+		}
 }
 
 void

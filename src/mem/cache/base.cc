@@ -367,10 +367,10 @@ BaseCache::recvTimingReq(PacketPtr pkt)
         ppHit->notify(pkt);
 				
 				// printf("find hit blk\n");
-				if (!prefetcher)printf("no prefetcher\n");
-				if (!blk) printf("no blk\n");
+				// if (!prefetcher)printf("no prefetcher\n");
+				//if (!blk) printf("no blk\n");
         if (prefetcher && blk && blk->wasPrefetched()) {
-						printf("blk from prefetcher\n");
+						// printf("blk from prefetcher\n");
             blk->status &= ~BlkHWPrefetched;
         }
 

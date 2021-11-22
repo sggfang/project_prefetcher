@@ -136,6 +136,7 @@ Queued::getMaxPermittedPrefetches(size_t total) const
             1 : (total - throttle_pfs);
         max_pfs = min_pfs + (total - min_pfs) *
             usefulPrefetches / issuedPrefetches;
+				//printf("usefulprefetches = %lu\n",usefulPrefetches);
     }
     return max_pfs;
 }
@@ -496,6 +497,8 @@ Queued::addToQueue(std::list<DeferredPacket> &queue,
         queue.erase(it);
     }
 
+		// dpp.cmd = MemCmd::HardPFReq;
+		 
     if (queue.size() == 0) {
         queue.emplace_back(dpp);
     } else {

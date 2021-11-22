@@ -59,15 +59,16 @@ namespace Prefetcher {
 class TIFS : public Queued
 {
   /* data type of instruction miss log entry*/
+	/*
   struct InstructionMissLogEntry{
 		Addr retiredAddress;
 		bool hit_from_svb;
   };
 	
 	CircularQueue<InstructionMissLogEntry> InstructionMissLog;
-
+*/
 	void addToInstructionMissLog(Addr addr, bool hit);
-	void updateInstructionMissLog(Addr addr, bool hit);
+	void updateInstructionMissLog(Addr addr, bool hit) override;
 	 
 	struct IndexTableEntry:public TaggedEntry{
 		Addr address;

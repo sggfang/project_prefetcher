@@ -70,6 +70,7 @@ class BasePrefetcher(ClockedObject):
     # Get the block size from the parent (system)
     block_size = Param.Int(Parent.cache_line_size, "Block size in bytes")
 
+    #InstructionMiss_entries = Param.Unsigned(1024, "# of entries of instruction miss log")
     on_miss = Param.Bool(False, "Only notify prefetcher on misses")
     on_read = Param.Bool(True, "Notify prefetcher on reads")
     on_write = Param.Bool(True, "Notify prefetcher on writes")
@@ -488,9 +489,9 @@ class TIFSPrefetcher(QueuedPrefetcher):
     cxx_class = "Prefetcher::TIFS"
     cxx_header = "mem/cache/prefetch/tifs.hh"
 
-    inTable_entries = Param.MemorySize("64",
+    inTable_entries = Param.MemorySize("16384",
         "Number of entries in the active generation table")
-    inTable_assoc = Param.Unsigned(64,
+    inTable_assoc = Param.Unsigned(16384,
         "Associativity of the active generation table")
     inTable_indexing_policy = Param.BaseIndexingPolicy(
         SetAssociative(entry_size = 1,
@@ -499,7 +500,7 @@ class TIFSPrefetcher(QueuedPrefetcher):
         "Indexing policy of the active generation table")
     inTable_replacement_policy = Param.BaseReplacementPolicy(
         LRURP(), "Replacement policy of the active generation table")
-    InstructionMiss_entries = Param.Unsigned(1024, "# of entries of instruction miss log")
+    # InstructionMiss_entries = Param.Unsigned(1024, "# of entries of instruction miss log")
 
 class HWPProbeEventRetiredInsts(HWPProbeEvent):
     def register(self):

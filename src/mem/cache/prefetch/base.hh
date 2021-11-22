@@ -57,6 +57,7 @@
 #include "sim/byteswap.hh"
 #include "sim/clocked_object.hh"
 #include "sim/probe/probe.hh"
+#include "base/circular_queue.hh"
 
 class BaseCache;
 struct BasePrefetcherParams;
@@ -83,6 +84,12 @@ class Base : public ClockedObject
     std::vector<PrefetchListener *> listeners;
 
   public:
+		struct InstructionMissLogEntry{
+						Addr retiredAddress;
+						bool hit_from_svb;
+		};
+
+		CircularQueue<InstructionMissLogEntry> InstructionMissLog;
 
     /**
      * Class containing the information needed by the prefetch to train and
@@ -352,6 +359,8 @@ class Base : public ClockedObject
 		virtual bool checkInQueue(const PacketPtr &ptr){
 						return false;
 		}
+		
+		virtual void updateInstructionMissLog(Addr addr, bool hit);
 
     /**
      * Register local statistics.
