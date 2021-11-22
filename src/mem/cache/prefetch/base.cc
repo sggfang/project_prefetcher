@@ -261,11 +261,4 @@ Base::addTLB(BaseTLB *t)
     tlb = t;
 }
 
-// Ni: Add a setPC method for FDIP
-/*void
-Base::setPC(TheISA::PCState &nextPC)
-{
-    // Empty, just for FDIP to override
-}*/
-
 } // namespace Prefetcher

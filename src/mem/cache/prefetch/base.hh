@@ -58,9 +58,6 @@
 #include "sim/clocked_object.hh"
 #include "sim/probe/probe.hh"
 
-// Ni: Added for TheISA
-#include "config/the_isa.hh"
-
 class BaseCache;
 struct BasePrefetcherParams;
 
@@ -383,9 +380,6 @@ class Base : public ClockedObject
      * @param tlb pointer to the BaseTLB object to add
      */
     void addTLB(BaseTLB *tlb);
-
-    // Ni: Add a setPC method for FDIP
-    // virtual void setPC(TheISA::PCState &nextPC);
 };
 
 } // namespace Prefetcher

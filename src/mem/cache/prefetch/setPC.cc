@@ -4,5 +4,4 @@ setPC::setPC()
 {
 }
 
-Addr setPC::enqueuePC = -1;
-
+std::list<Addr> setPC::enqueuePC;

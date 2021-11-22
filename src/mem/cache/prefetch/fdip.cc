@@ -6,6 +6,7 @@
 #include "mem/cache/prefetch/fdip.hh"
 
 #include <cassert>
+#include <list>
 
 #include "base/intmath.hh"
 #include "base/logging.hh"
@@ -13,6 +14,7 @@
 #include "base/trace.hh"
 #include "debug/HWPrefetch.hh"
 #include "mem/cache/prefetch/associative_set_impl.hh"
+#include "mem/cache/prefetch/setPC.hh"
 #include "mem/cache/replacement_policies/base.hh"
 #include "params/FDIPPrefetcher.hh"
 
@@ -34,15 +36,16 @@ void
 FDIP::calculatePrefetch(const PrefetchInfo &pfi,
                                     std::vector<AddrPriority> &addresses)
 {
-	if (setPC::enqueuePC != -1) {
-		addresses.push_back(AddrPriority(setPC::enqueuePC, 0));
-		setPC::enqueuePC = -1;
-	}	
+        for (std::list<Addr>::iterator it = setPC::enqueuePC.begin();
+                it!=setPC::enqueuePC.end(); it++) {
+                addresses.push_back(AddrPriority(*it, 0));
+        }
+        setPC::enqueuePC.clear();
 }
 
 } // namespace prefetcher
 
-Prefetcher::FDIP* 
+Prefetcher::FDIP*
 FDIPPrefetcherParams::create(){
-		return new Prefetcher::FDIP(this);
+                return new Prefetcher::FDIP(this);
 }

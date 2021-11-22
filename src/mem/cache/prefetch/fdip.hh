@@ -12,14 +12,12 @@
 
 #include "base/sat_counter.hh"
 #include "base/types.hh"
+#include "config/the_isa.hh"
 #include "mem/cache/prefetch/associative_set.hh"
 #include "mem/cache/prefetch/queued.hh"
 #include "mem/cache/replacement_policies/replaceable_entry.hh"
 #include "mem/cache/tags/indexing_policies/set_associative.hh"
 #include "mem/packet.hh"
-
-#include "config/the_isa.hh"
-#include "mem/cache/prefetch/setPC.hh"
 
 class BaseIndexingPolicy;
 class BaseReplacementPolicy;
