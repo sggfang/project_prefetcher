@@ -123,23 +123,24 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 */
     if (true) {
         inTable.accessEntry(entry);
-				
+				bool hit_in_log = false;
 				auto it = InstructionMissLog.end();
 				while (it != InstructionMissLog.begin()){
 						it--;
 						if (it->retiredAddress == pf_addr){
 								addresses.push_back(AddrPriority(pf_addr, 0));
 								it++;
+								hit_in_log = true;
 								break;
 						}
 				}
 				do{
-						if (!it->hit_from_svb) break;
+						if (!hit_in_log || !it->hit_from_svb) break;
 						addresses.push_back(AddrPriority(it->retiredAddress, 0));
 						it++;
 				}while(it!=InstructionMissLog.end());
 		}
-		 // printf("prefetched addr size %lu\n", addresses.size()); 
+	  // printf("prefetched addr size %lu\n", addresses.size()); 
 }
 } // namespace Prefetcher
 
