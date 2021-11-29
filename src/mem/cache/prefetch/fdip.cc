@@ -36,6 +36,7 @@ void
 FDIP::calculatePrefetch(const PrefetchInfo &pfi,
                                     std::vector<AddrPriority> &addresses)
 {
+                //addresses.push_back(AddrPriority(pfi.getPaddr(),0));
         for (std::list<Addr>::iterator it = setPC::enqueuePC.begin();
                 it!=setPC::enqueuePC.end(); it++) {
                 addresses.push_back(AddrPriority(*it, 0));

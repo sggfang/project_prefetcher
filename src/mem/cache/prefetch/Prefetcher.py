@@ -77,7 +77,9 @@ class BasePrefetcher(ClockedObject):
     on_inst  = Param.Bool(True, "Notify prefetcher on instruction accesses")
     prefetch_on_access = Param.Bool(Parent.prefetch_on_access,
         "Notify the hardware prefetcher on every access (not just misses)")
-    use_virtual_addresses = Param.Bool(False,
+
+        # Ni: Changed False to True for FDIP
+    use_virtual_addresses = Param.Bool(True,
         "Use virtual addresses for prefetching")
 
     _events = []
