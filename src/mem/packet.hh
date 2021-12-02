@@ -319,6 +319,8 @@ class Packet : public Printable
 
     /// A pointer to the original request.
     RequestPtr req;
+	
+		bool hit_from_svb = false;
 
   private:
    /**

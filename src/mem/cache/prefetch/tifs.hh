@@ -49,6 +49,7 @@
 
 #include "base/circular_queue.hh"
 #include "base/sat_counter.hh"
+#include "mem/cache/iml.hh"
 #include "mem/cache/prefetch/associative_set.hh"
 #include "mem/cache/prefetch/queued.hh"
 
@@ -66,10 +67,10 @@ class TIFS : public Queued
   };
 	
 	CircularQueue<InstructionMissLogEntry> InstructionMissLog;
-*/
+	
 	void addToInstructionMissLog(Addr addr, bool hit);
-	void updateInstructionMissLog(Addr addr, bool hit) override;
-	 
+	void updateInstructionMissLog(Addr addr, bool hit);
+	 */
 	struct IndexTableEntry:public TaggedEntry{
 		Addr address;
 		Addr pc;
@@ -91,10 +92,6 @@ class TIFS : public Queued
 	
 	AssociativeSet<IndexTableEntry> inTable;
 
-	// std::unordered_map<int, INTable> inTables;
-
-	// INTable* findIndexTable(int core_num);
-		
   public:
     TIFS(const TIFSPrefetcherParams* p);
     ~TIFS() = default;

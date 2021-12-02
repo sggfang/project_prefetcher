@@ -69,13 +69,32 @@ Base::PrefetchInfo::PrefetchInfo(PacketPtr pkt, Addr addr, bool miss)
         Addr offset = pkt->req->getPaddr() - pkt->getAddr();
         std::memcpy(data, &(pkt->getConstPtr<uint8_t>()[offset]), req_size);
     }
+		hit_from_svb = false;
 }
 
 Base::PrefetchInfo::PrefetchInfo(PrefetchInfo const &pfi, Addr addr)
   : address(addr), pc(pfi.pc), masterId(pfi.masterId), validPC(pfi.validPC),
     secure(pfi.secure), size(pfi.size), write(pfi.write),
-    paddress(pfi.paddress), cacheMiss(pfi.cacheMiss), data(nullptr)
+    paddress(pfi.paddress), cacheMiss(pfi.cacheMiss), data(nullptr),
+		hit_from_svb(false)
 {
+}
+
+Base::PrefetchInfo::PrefetchInfo(PacketPtr pkt, Addr addr, bool miss, bool hit)
+  : address(addr), pc(pkt->req->hasPC() ? pkt->req->getPC() : 0),
+    masterId(pkt->req->masterId()), validPC(pkt->req->hasPC()),
+    secure(pkt->isSecure()), size(pkt->req->getSize()), write(pkt->isWrite()),
+    paddress(pkt->req->getPaddr()), cacheMiss(miss)
+{
+    unsigned int req_size = pkt->req->getSize();
+    if (!write && miss) {
+        data = nullptr;
+    } else {
+        data = new uint8_t[req_size];
+        Addr offset = pkt->req->getPaddr() - pkt->getAddr();
+        std::memcpy(data, &(pkt->getConstPtr<uint8_t>()[offset]), req_size);
+    }
+		hit_from_svb = hit;
 }
 
 void
@@ -89,7 +108,7 @@ Base::PrefetchListener::notify(const PacketPtr &pkt)
 }
 
 Base::Base(const BasePrefetcherParams *p)
-    : ClockedObject(p), listeners(),InstructionMissLog(16384),
+    : ClockedObject(p), listeners(),// InstructionMissLog(16384),
 		  cache(nullptr), blkSize(p->block_size),
       lBlkSize(floorLog2(blkSize)), onMiss(p->on_miss), onRead(p->on_read),
       onWrite(p->on_write), onData(p->on_data), onInst(p->on_inst),
@@ -132,37 +151,28 @@ Base::observeAccess(const PacketPtr &pkt, bool miss) const
     bool inv = pkt->isInvalidate();
 
     if (pkt->req->isUncacheable()){
-				// printf("un cacheable\n");
 				return false;
 		}
     if (fetch && !onInst) {
-		//				printf("fetch but not on inst\n");
-			//			printf("fetch == %d  not oninst == %d\n", fetch, !onInst);
 						return false;
 		}
     if (!fetch && !onData) {
-		//				printf("not on data\n");
 						return false;
 		}
     if (!fetch && read && !onRead){
-		//				printf("read and not on read\n");
 						return false;
 		}
     if (!fetch && !read && !onWrite) {
-		//				printf("not read nad not on write\n");
 						return false;
 		}
     if (!fetch && !read && inv) {
-		//				printf("not read and inv\n");
 						return false;
 		}
     if (pkt->cmd == MemCmd::CleanEvict) {
-		//				printf("clean evict\n");
 						return false;
 		}
 
     if (onMiss) {
-			//	printf("find miss\n");
         return miss;
     }
 
@@ -237,36 +247,66 @@ Base::probeNotify(const PacketPtr &pkt, bool miss)
 
     if (hasBeenPrefetched(pkt->getAddr(), pkt->isSecure())) {
         usefulPrefetches += 1;
-				printf("find prefetched blk\n");
     }
 
     // Verify this access type is observed by prefetcher
     if (observeAccess(pkt, miss)) {
         if (useVirtualAddresses && pkt->req->hasVaddr()) {
-            PrefetchInfo pfi(pkt, pkt->req->getVaddr(), miss);
+            PrefetchInfo pfi(pkt, pkt->req->getVaddr(), miss, 
+															pkt->hit_from_svb);
             notify(pkt, pfi);
         } else if (!useVirtualAddresses) {
-						// printf("notify prefetcher\n");
-            PrefetchInfo pfi(pkt, pkt->req->getPaddr(), miss);
+            PrefetchInfo pfi(pkt, pkt->req->getPaddr(), miss, 
+															pkt->hit_from_svb);
             notify(pkt, pfi);
         }
-    }else{
-				//printf("update %lu \n",pkt->req->getPaddr());
-				updateInstructionMissLog(pkt->req->getPaddr(), true);
 		}
+		/*
+		 else {
+				// printf("update %lu \n",pkt->req->getPaddr());
+				updateInstructionMissLog(pkt->req->getPaddr(), true);
+				unsigned long temp_num = getSVBHitNum();
+				if (temp_num != 0)
+					printf("num of hit in iml: %lu\n", temp_num);				
+		}
+		*/
 }
 
+/*
+unsigned long
+Base::getSVBHitNum(){
+		auto it = InstructionMissLog.begin();
+		unsigned long num = 0;
+		while(it != InstructionMissLog.end()){
+				if(it->hit_from_svb) num++;
+				it++;
+		}
+		return num;
+}
 void
 Base::updateInstructionMissLog(Addr addr, bool hit){
 		auto it = InstructionMissLog.end();
+		unsigned long changed_num = 0;
 		while(it != InstructionMissLog.begin()){
 						if (addr == it->retiredAddress){
-										it->hit_from_svb = hit;
-										break;
+										(*it).hit_from_svb = hit;
+										changed_num++;
 						}
 						it--;
 		}
+		if (changed_num == 0){
+				addToInstructionMissLog(addr, hit);
+		}
 }
+
+void 
+Base::addToInstructionMissLog(Addr addr, bool hit){
+		InstructionMissLogEntry entry;
+		entry.retiredAddress = addr;
+		entry.hit_from_svb = hit;
+		InstructionMissLog.push_back(entry);
+}
+*/
 
 void
 Base::regProbeListeners()

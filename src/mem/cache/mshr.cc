@@ -311,7 +311,6 @@ MSHR::allocate(Addr blk_addr, unsigned blk_size, PacketPtr target,
 
     // Don't know of a case where we would allocate a new MSHR for a
     // snoop (mem-side request), so set source according to request here
-		if (target->cmd == MemCmd::HardPFReq) printf("target cmd is hardpfreq\n");
     Target::Source source = (target->cmd == MemCmd::HardPFReq) ?
         Target::FromPrefetcher : Target::FromCPU;
     targets.add(target, when_ready, _order, source, true, alloc_on_fill);

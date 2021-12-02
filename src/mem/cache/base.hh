@@ -57,6 +57,7 @@
 #include "debug/Cache.hh"
 #include "debug/CachePort.hh"
 #include "enums/Clusivity.hh"
+#include "mem/cache/iml.hh"
 #include "mem/cache/cache_blk.hh"
 #include "mem/cache/compressors/base.hh"
 #include "mem/cache/mshr_queue.hh"
@@ -305,7 +306,8 @@ class BaseCache : public ClockedObject
 
     };
 
-    CpuSidePort cpuSidePort;
+    
+		CpuSidePort cpuSidePort;
     MemSidePort memSidePort;
 
   protected:
@@ -1226,12 +1228,14 @@ class BaseCache : public ClockedObject
             --missCount;
             if (missCount == 0)
                 exitSimLoop("A cache reached the maximum miss count");
-        }
+        } 
     }
     void incHitCount(PacketPtr pkt)
     {
         assert(pkt->req->masterId() < system->maxMasters());
         stats.cmdStats(pkt).hits[pkt->req->masterId()]++;
+				pkt->hit_from_svb = true;
+				IML::updateInstructionMissLog(pkt->req->getPaddr(), true);
     }
 
     /**

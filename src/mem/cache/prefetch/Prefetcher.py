@@ -500,7 +500,7 @@ class TIFSPrefetcher(QueuedPrefetcher):
         "Indexing policy of the active generation table")
     inTable_replacement_policy = Param.BaseReplacementPolicy(
         LRURP(), "Replacement policy of the active generation table")
-    # InstructionMiss_entries = Param.Unsigned(1024, "# of entries of instruction miss log")
+    InstructionMiss_entries = Param.Unsigned(16384, "# of entries of instruction miss log")
 
 class HWPProbeEventRetiredInsts(HWPProbeEvent):
     def register(self):

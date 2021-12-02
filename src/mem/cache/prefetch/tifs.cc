@@ -65,7 +65,7 @@ TIFS::TIFS(const TIFSPrefetcherParams *p)
 					IndexTableEntry())
 {
 }
-
+/*
 void 
 TIFS::addToInstructionMissLog(Addr addr, bool hit){
 		InstructionMissLogEntry entry;
@@ -84,7 +84,7 @@ TIFS::updateInstructionMissLog(Addr addr, bool hit){
 				it--;
 		}
 }
-
+*/
 void
 TIFS::calculatePrefetch(const PrefetchInfo &pfi,
                         std::vector<AddrPriority> &addresses)
@@ -98,7 +98,6 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
     Addr pf_addr = pfi.getPaddr();
     Addr pc = pfi.getPC();
     bool is_secure = pfi.isSecure();
-	//	bool is_miss = pfi.isCacheMiss();
 
     // Search for entry in the index table
     IndexTableEntry *entry = inTable.findEntry(pf_addr, is_secure);
@@ -113,19 +112,14 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 				entry->address = pf_addr; 
 				entry->pc = pc;
 
-				addToInstructionMissLog(pf_addr, false);
+				IML::addToInstructionMissLog(pf_addr, false);
     }
-/*
-		if (!is_miss){
-				updateInstructionMissLog(pf_addr, true);
-				return;
-		}
-*/
+
     if (true) {
         inTable.accessEntry(entry);
 				bool hit_in_log = false;
-				auto it = InstructionMissLog.end();
-				while (it != InstructionMissLog.begin()){
+				auto it = IML::InstructionMissLog.end();
+				while (it != IML::InstructionMissLog.begin()){
 						it--;
 						if (it->retiredAddress == pf_addr){
 								addresses.push_back(AddrPriority(pf_addr, 0));
@@ -134,14 +128,19 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 								break;
 						}
 				}
-				do{
+				int counter = 5;
+				do{ 
 						if (!hit_in_log || !it->hit_from_svb) break;
 						addresses.push_back(AddrPriority(it->retiredAddress, 0));
 						it++;
-				}while(it!=InstructionMissLog.end());
+						counter--;
+				}
+				//while(counter!=0);
+				while(it != IML::InstructionMissLog.end() && counter!=0);
 		}
-	  // printf("prefetched addr size %lu\n", addresses.size()); 
+		// if (addresses.size() != 1) printf("prefetched addr size %lu\n", addresses.size()); 
 }
+
 } // namespace Prefetcher
 
 Prefetcher::TIFS* 

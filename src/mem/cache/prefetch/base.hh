@@ -52,12 +52,13 @@
 #include "arch/generic/tlb.hh"
 #include "base/statistics.hh"
 #include "base/types.hh"
+#include "mem/cache/base.hh"
 #include "mem/packet.hh"
 #include "mem/request.hh"
 #include "sim/byteswap.hh"
 #include "sim/clocked_object.hh"
 #include "sim/probe/probe.hh"
-#include "base/circular_queue.hh"
+// #include "base/circular_queue.hh"
 
 class BaseCache;
 struct BasePrefetcherParams;
@@ -84,12 +85,15 @@ class Base : public ClockedObject
     std::vector<PrefetchListener *> listeners;
 
   public:
+	/*
 		struct InstructionMissLogEntry{
 						Addr retiredAddress;
 						bool hit_from_svb;
 		};
 
 		CircularQueue<InstructionMissLogEntry> InstructionMissLog;
+		unsigned long getSVBHitNum();
+		*/
 
     /**
      * Class containing the information needed by the prefetch to train and
@@ -116,8 +120,9 @@ class Base : public ClockedObject
         bool cacheMiss;
         /** Pointer to the associated request data */
         uint8_t *data;
-
+				
       public:
+				bool hit_from_svb;
         /**
          * Obtains the address value of this Prefetcher address.
          * @return the addres value.
@@ -253,6 +258,8 @@ class Base : public ClockedObject
          */
         PrefetchInfo(PrefetchInfo const &pfi, Addr addr);
 
+				PrefetchInfo(PacketPtr pkt, Addr addr, bool miss, bool hit);
+
         ~PrefetchInfo()
         {
             delete[] data;
@@ -360,7 +367,8 @@ class Base : public ClockedObject
 						return false;
 		}
 		
-		virtual void updateInstructionMissLog(Addr addr, bool hit);
+		//virtual void updateInstructionMissLog(Addr addr, bool hit);
+		//virtual void addToInstructionMissLog(Addr addr, bool hit);
 
     /**
      * Register local statistics.
