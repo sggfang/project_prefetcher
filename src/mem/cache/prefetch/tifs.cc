@@ -128,7 +128,7 @@ TIFS::calculatePrefetch(const PrefetchInfo &pfi,
 								break;
 						}
 				}
-				int counter = 5;
+				int counter = 1024;
 				do{ 
 						if (!hit_in_log || !it->hit_from_svb) break;
 						addresses.push_back(AddrPriority(it->retiredAddress, 0));

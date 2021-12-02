@@ -1,5 +1,6 @@
 #ifndef __IML_HH__
 #define __IML_HH__
+#define iml_size 1024
 
 #include <list>
 #include "base/circular_queue.hh"

@@ -6,11 +6,14 @@ void
 IML::updateInstructionMissLog(Addr addr, bool hit)
 {
 		auto it = InstructionMissLog.end();
-		while(it != InstructionMissLog.begin()){
-		if (addr == it->retiredAddress){
-					it->hit_from_svb = hit;
-		}
-		it--;
+		int temp_num = iml_size;
+		while(it != InstructionMissLog.begin() && temp_num!=0){
+				if (addr == it->retiredAddress){
+						it->hit_from_svb = hit;
+						break;
+				}
+				it--;
+				temp_num--;
 		}
 }
 
