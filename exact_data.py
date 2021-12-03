@@ -1,5 +1,6 @@
 import os
 
+written_lines = []
 
 def main(data_path):
 		tifs = {}
@@ -30,6 +31,7 @@ def main(data_path):
 		for k in wins:
 				print(k, baseline[k], tifs[k], 
 							str(100*(tifs[k]-baseline[k])/baseline[k])+"%")
+				written_lines.append(k+": "+str(100*(tifs[k]-baseline[k])/baseline[k])+"%\n")
 
 
 if __name__ == '__main__':
@@ -37,4 +39,8 @@ if __name__ == '__main__':
 				if not folder.startswith("data"):
 						continue
 				print(folder+":")
+				written_lines.append(folder+":\n")
 				main(os.path.join(os.getcwd(), folder))
+		with open("ipc.txt", 'w') as file:
+				file.writelines(written_lines)
+
