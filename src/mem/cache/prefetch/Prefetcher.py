@@ -165,7 +165,7 @@ class StridePrefetcher(QueuedPrefetcher):
     degree = Param.Int(4, "Number of prefetches to generate")
 
     table_assoc = Param.Int(4, "Associativity of the PC table")
-    table_entries = Param.MemorySize("64", "Number of entries of the PC table")
+    table_entries = Param.MemorySize("32", "Number of entries of the PC table")
     table_indexing_policy = Param.BaseIndexingPolicy(
         StridePrefetcherHashedSetAssociative(entry_size = 1,
         assoc = Parent.table_assoc, size = Parent.table_entries),

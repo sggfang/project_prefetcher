@@ -11,7 +11,7 @@ def main(data_path):
 						continue
 				bench = params[-1]
 				file_path = os.path.join(data_path, folder, "stats.txt")
-				if "baseline" in folder:
+				if "baseline" in folder or "stride" in folder:
 						with open(file_path, 'r') as file:
 								readlines = file.readlines()
 								for line in readlines:
