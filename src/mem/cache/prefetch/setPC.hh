@@ -12,6 +12,7 @@ class setPC
         public:
                 setPC();
                 static std::list<Addr> enqueuePC;
+                                static Addr currentPC;
 };
 
 #endif

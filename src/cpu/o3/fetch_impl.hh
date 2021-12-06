@@ -572,8 +572,12 @@ DefaultFetch<Impl>::lookupAndUpdateNextPC(
                                         nextPC, tid);
 
         // Ni: Send nextPC to FTQ
-        if (setPC::enqueuePC.size() < 32)
-                setPC::enqueuePC.push_back(nextPC.pc());
+                //setPC::enqueuePC.push_back(nextPC.pc());
+        if (setPC::enqueuePC.size() < 64) {
+                                for (int i = 0; i < 64; i++) {
+                        setPC::enqueuePC.push_back(nextPC.pc() + 64 * i);
+                                }
+                }
 
     if (predict_taken) {
         DPRINTF(Fetch, "[tid:%i] [sn:%llu] Branch at PC %#x "
@@ -1342,6 +1346,9 @@ DefaultFetch<Impl>::fetch(bool &status_change)
 #endif
 
             nextPC = thisPC;
+
+                        // Ni: update currentPC
+                        setPC::currentPC = thisPC.pc();
 
             // If we're branching after this instruction, quit fetching
             // from the same block.
