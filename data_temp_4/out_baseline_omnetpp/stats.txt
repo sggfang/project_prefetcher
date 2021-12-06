@@ -1,11 +1,11 @@
 
 ---------- Begin Simulation Statistics ----------
 final_tick                                  641721500                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-host_inst_rate                                 214462                       # Simulator instruction rate (inst/s)
-host_mem_usage                                 880676                       # Number of bytes of host memory used
-host_op_rate                                   230568                       # Simulator op (including micro ops) rate (op/s)
-host_seconds                                     4.66                       # Real time elapsed on the host
-host_tick_rate                              137619875                       # Simulator tick rate (ticks/s)
+host_inst_rate                                 192989                       # Simulator instruction rate (inst/s)
+host_mem_usage                                 880624                       # Number of bytes of host memory used
+host_op_rate                                   207482                       # Simulator op (including micro ops) rate (op/s)
+host_seconds                                     5.18                       # Real time elapsed on the host
+host_tick_rate                              123840328                       # Simulator tick rate (ticks/s)
 sim_freq                                 1000000000000                       # Frequency of simulated ticks
 sim_insts                                     1000000                       # Number of instructions simulated
 sim_ops                                       1075135                       # Number of ops (including micro ops) simulated
