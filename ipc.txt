@@ -1,335 +1,336 @@
-data_mem_8:
-leslie3d: (ipc_diff, 0.445328292031%); (miss_latency_diff, -17.5433792455%); (miss_rate, 0.230539, 0.150778)
-namd: (ipc_diff, 7.96749819541%); (miss_latency_diff, -15.1049892049%); (miss_rate, 0.210437, 0.152961)
-GemsFDTD: (ipc_diff, 1.66776810956%); (miss_latency_diff, -1.1657062644%); (miss_rate, 0.242015, 0.213541)
-xalancbmk: (ipc_diff, 12.9951289095%); (miss_latency_diff, -20.0584169135%); (miss_rate, 0.235175, 0.157612)
-mcf: (ipc_diff, 6.98472824612%); (miss_latency_diff, -14.6678998611%); (miss_rate, 0.18789, 0.154637)
-sjeng: (ipc_diff, 0.00369368550256%); (miss_latency_diff, -1.77557055968%); (miss_rate, 0.009728, 0.009339)
-gcc: (ipc_diff, 1.2265712617%); (miss_latency_diff, -4.34382170119%); (miss_rate, 0.074464, 0.06429)
-hmmer: (ipc_diff, 21.3038525718%); (miss_latency_diff, -40.8861345086%); (miss_rate, 0.08905, 0.04519)
-calculix: (ipc_diff, 0.243163837276%); (miss_latency_diff, 0.418518908086%); (miss_rate, 0.224921, 0.214371)
-libquantum: (ipc_diff, 0.117090985252%); (miss_latency_diff, 0.518606403856%); (miss_rate, 0.004494, 0.004063)
-milc: (ipc_diff, 0.336425299667%); (miss_latency_diff, -5.2817629305%); (miss_rate, 0.00081, 0.000643)
-povray: (ipc_diff, 0.748924667331%); (miss_latency_diff, -6.05675179237%); (miss_rate, 0.01611, 0.013032)
-tonto: (ipc_diff, 19.3386105237%); (miss_latency_diff, -30.8471476511%); (miss_rate, 0.13693, 0.081385)
-bwaves: (ipc_diff, 0.0664977719632%); (miss_latency_diff, -8.12891523907%); (miss_rate, 0.002488, 0.001822)
-lbm: (ipc_diff, 0.00563968079407%); (miss_latency_diff, -1.76432129801%); (miss_rate, 0.000516, 0.000481)
-gobmk: (ipc_diff, 0.415779344405%); (miss_latency_diff, -0.496399872214%); (miss_rate, 0.000856, 0.000808)
-
-data_temp_4:
-leslie3d: (ipc_diff, 2.9751862123%); (miss_latency_diff, -10.8023655856%); (miss_rate, 0.33256, 0.277682)
-namd: (ipc_diff, 21.8321210167%); (miss_latency_diff, -22.2989074503%); (miss_rate, 0.445519, 0.336318)
-mcf: (ipc_diff, 28.4187400753%); (miss_latency_diff, -29.8347390947%); (miss_rate, 0.442927, 0.316794)
-gcc: (ipc_diff, 1.04776119184%); (miss_latency_diff, -2.90206338351%); (miss_rate, 0.015467, 0.01451)
-hmmer: (ipc_diff, 5.20464164928%); (miss_latency_diff, -6.40567216738%); (miss_rate, 0.341175, 0.357427)
-astar: (ipc_diff, 0.0587334795224%); (miss_latency_diff, -0.112993301487%); (miss_rate, 0.24544, 0.24175)
-libquantum: (ipc_diff, 0.69285034032%); (miss_latency_diff, -1.77084480493%); (miss_rate, 0.043972, 0.042425)
-h264ref: (ipc_diff, 1.26383106478%); (miss_latency_diff, 0.0161697707888%); (miss_rate, 0.147609, 0.146264)
-milc: (ipc_diff, 0.608307060149%); (miss_latency_diff, -1.95466505958%); (miss_rate, 0.010937, 0.010757)
-tonto: (ipc_diff, 3.07838563718%); (miss_latency_diff, -4.65105330703%); (miss_rate, 0.095691, 0.087593)
-bwaves: (ipc_diff, 0.334478480771%); (miss_latency_diff, -2.98382394819%); (miss_rate, 0.033057, 0.031824)
-
-data_temp_cons_8:
-bzip2: (ipc_diff, 0.479433450631%); (miss_latency_diff, -0.656112362117%); (miss_rate, 0.005342, 0.005265)
-leslie3d: (ipc_diff, 2.26401714149%); (miss_latency_diff, -11.0864642865%); (miss_rate, 0.232667, 0.187658)
-namd: (ipc_diff, 7.11277700378%); (miss_latency_diff, -9.6049093533%); (miss_rate, 0.209565, 0.180382)
-GemsFDTD: (ipc_diff, 2.74817645016%); (miss_latency_diff, -1.51023004723%); (miss_rate, 0.241001, 0.219614)
-xalancbmk: (ipc_diff, 3.92621142283%); (miss_latency_diff, -7.3251895402%); (miss_rate, 0.085171, 0.070871)
-mcf: (ipc_diff, 18.527168097%); (miss_latency_diff, -28.0484547892%); (miss_rate, 0.189412, 0.129652)
-sjeng: (ipc_diff, 0.00765863688046%); (miss_latency_diff, -0.473511903838%); (miss_rate, 0.009671, 0.009472)
-hmmer: (ipc_diff, 11.1598711732%); (miss_latency_diff, -15.0434309043%); (miss_rate, 0.146475, 0.118118)
-calculix: (ipc_diff, 0.581286803478%); (miss_latency_diff, -0.503343547502%); (miss_rate, 0.224695, 0.216305)
-astar: (ipc_diff, 0.121588361798%); (miss_latency_diff, -1.86293950254%); (miss_rate, 0.175365, 0.173219)
-libquantum: (ipc_diff, 0.987116345434%); (miss_latency_diff, -1.62265760856%); (miss_rate, 0.028995, 0.026213)
-h264ref: (ipc_diff, 0.489199444426%); (miss_latency_diff, 2.89903152381%); (miss_rate, 0.03941, 0.040452)
-milc: (ipc_diff, 0.61464716378%); (miss_latency_diff, -2.07828869226%); (miss_rate, 0.008032, 0.007565)
-povray: (ipc_diff, 5.47549804723%); (miss_latency_diff, -10.3593265954%); (miss_rate, 0.085449, 0.069666)
-tonto: (ipc_diff, 4.55844976358%); (miss_latency_diff, -8.80297728769%); (miss_rate, 0.074157, 0.062603)
-bwaves: (ipc_diff, 0.207947477867%); (miss_latency_diff, -5.45475691732%); (miss_rate, 0.024215, 0.020997)
-
-data_temp_cons_16:
-leslie3d: (ipc_diff, 0.255053242364%); (miss_latency_diff, -3.1304767195%); (miss_rate, 0.110575, 0.102464)
-namd: (ipc_diff, 2.68836186796%); (miss_latency_diff, -7.56996457321%); (miss_rate, 0.059991, 0.052167)
-gromacs: (ipc_diff, 0.331108731244%); (miss_latency_diff, -0.455258139859%); (miss_rate, 0.024344, 0.02339)
-GemsFDTD: (ipc_diff, 0.684904407918%); (miss_latency_diff, -0.202727026799%); (miss_rate, 0.1926, 0.183421)
-xalancbmk: (ipc_diff, 0.873529992438%); (miss_latency_diff, -2.26178976724%); (miss_rate, 0.04353, 0.039697)
-omnetpp: (ipc_diff, 0.140809883945%); (miss_latency_diff, 1.82259651969%); (miss_rate, 0.011869, 0.011772)
-mcf: (ipc_diff, 17.8076723737%); (miss_latency_diff, -30.2846699337%); (miss_rate, 0.156807, 0.104995)
-hmmer: (ipc_diff, 1.64527772665%); (miss_latency_diff, -5.44900872649%); (miss_rate, 0.029557, 0.0253)
-calculix: (ipc_diff, 0.112612058834%); (miss_latency_diff, 1.45059904167%); (miss_rate, 0.193882, 0.18995)
-astar: (ipc_diff, 0.0593483955468%); (miss_latency_diff, -3.72283826765%); (miss_rate, 0.157642, 0.154617)
-libquantum: (ipc_diff, 0.000662696512107%); (miss_latency_diff, 0.430002543024%); (miss_rate, 0.018829, 0.018644)
-povray: (ipc_diff, 1.50921409635%); (miss_latency_diff, -4.60717511602%); (miss_rate, 0.037276, 0.032776)
-tonto: (ipc_diff, 2.04921496491%); (miss_latency_diff, -4.11072133825%); (miss_rate, 0.04541, 0.040217)
-
-data_temp_cons_64:
-gromacs: (ipc_diff, 0.00254815617011%); (miss_latency_diff, -0.348243753577%); (miss_rate, 0.00947, 0.009283)
-xalancbmk: (ipc_diff, 0.12323983301%); (miss_latency_diff, -1.01835581633%); (miss_rate, 0.025248, 0.024036)
-mcf: (ipc_diff, 0.31411465111%); (miss_latency_diff, -1.45887224679%); (miss_rate, 0.004663, 0.004663)
-povray: (ipc_diff, 0.106668106911%); (miss_latency_diff, -2.32027019135%); (miss_rate, 0.012793, 0.012417)
-tonto: (ipc_diff, 0.572803442117%); (miss_latency_diff, -2.09218993166%); (miss_rate, 0.019116, 0.017919)
-
-data_temp_64:
-gromacs: (ipc_diff, 0.00254815617011%); (miss_latency_diff, -0.529121297675%); (miss_rate, 0.00947, 0.009277)
-xalancbmk: (ipc_diff, 0.202990224948%); (miss_latency_diff, -1.19157672303%); (miss_rate, 0.025248, 0.023761)
-mcf: (ipc_diff, 0.31411465111%); (miss_latency_diff, -1.45887224679%); (miss_rate, 0.004663, 0.004663)
-povray: (ipc_diff, 0.106668106911%); (miss_latency_diff, -2.41721654359%); (miss_rate, 0.012793, 0.012367)
-tonto: (ipc_diff, 0.555901300842%); (miss_latency_diff, -1.91901440005%); (miss_rate, 0.019116, 0.017925)
-
-data_fit_64:
-xalancbmk: (ipc_diff, 2.03705315287%); (miss_latency_diff, -11.5525713217%); (miss_rate, 0.04082, 0.031141)
-gcc: (ipc_diff, 0.0542719459424%); (miss_latency_diff, 0.152122485518%); (miss_rate, 0.003574, 0.003487)
-hmmer: (ipc_diff, 0.070371729259%); (miss_latency_diff, -1.05320464835%); (miss_rate, 0.00115, 0.001133)
-astar: (ipc_diff, 0.000227443654623%); (miss_latency_diff, -1.14211919981%); (miss_rate, 0.001118, 0.00107)
-povray: (ipc_diff, 0.0984758145412%); (miss_latency_diff, -2.39604418365%); (miss_rate, 0.002175, 0.001941)
-tonto: (ipc_diff, 1.53872734733%); (miss_latency_diff, -12.4972018004%); (miss_rate, 0.0137, 0.010515)
+benchmark	ipc_diff(%)	miss_latency_diff(%)	miss_rate_diff(%)
+data_cons_16:
+xalancbmk: (ipc_diff, 14.91758981499147%); (miss_latency_diff, -22.704005187128445%); (miss_rate, -27.62627264313103%）
+mcf: (ipc_diff, 19.06803732114328%); (miss_latency_diff, -35.18688523213321%); (miss_rate, -34.08544407841721%）
+namd: (ipc_diff, 2.4409631008888084%); (miss_latency_diff, -10.216096880815412%); (miss_rate, -13.325905923673913%）
+omnetpp: (ipc_diff, 0.014073990580393903%); (miss_latency_diff, 2.1896635135451317%); (miss_rate, -0.8021390374331456%）
+astar: (ipc_diff, 0.02041353683756527%); (miss_latency_diff, -3.968424910931876%); (miss_rate, -5.216360403082393%）
+leslie3d: (ipc_diff, 0.49231837514105736%); (miss_latency_diff, -3.128146433396728%); (miss_rate, -7.329025899359358%）
+gromacs: (ipc_diff, 0.09547194794360409%); (miss_latency_diff, -0.4639467796779252%); (miss_rate, -3.853716083366103%）
+povray: (ipc_diff, 0.6150111737088066%); (miss_latency_diff, -7.035952640492828%); (miss_rate, -14.228814723252308%）
+tonto: (ipc_diff, 7.51655560226596%); (miss_latency_diff, -16.489230966491895%); (miss_rate, -19.47165085478668%）
+gcc: (ipc_diff, 2.5795023885901958%); (miss_latency_diff, -10.472587814039372%); (miss_rate, -15.532431052093981%）
+hmmer: (ipc_diff, 1.2773105276822734%); (miss_latency_diff, -12.982477285260622%); (miss_rate, -23.028748207952912%）
+GemsFDTD: (ipc_diff, 0.6849044079181525%); (miss_latency_diff, -0.20272702679864976%); (miss_rate, -4.765835929387328%）
+calculix: (ipc_diff, 0.11261205883365723%); (miss_latency_diff, 1.4505990416659609%); (miss_rate, -2.028037672398671%）
 
 data_mem_16:
-leslie3d: (ipc_diff, 0.125676620748%); (miss_latency_diff, -5.90353736673%); (miss_rate, 0.109597, 0.089167)
-gromacs: (ipc_diff, 0.129137126281%); (miss_latency_diff, -3.22436676714%); (miss_rate, 0.002544, 0.00223)
-GemsFDTD: (ipc_diff, 1.69939047886%); (miss_latency_diff, -2.06605243011%); (miss_rate, 0.193361, 0.173183)
-xalancbmk: (ipc_diff, 15.5856996394%); (miss_latency_diff, -25.3696705237%); (miss_rate, 0.181471, 0.113365)
-omnetpp: (ipc_diff, 0.00734526087502%); (miss_latency_diff, -0.418464602399%); (miss_rate, 0.001128, 0.001097)
-mcf: (ipc_diff, 32.3152801461%); (miss_latency_diff, -47.9449602251%); (miss_rate, 0.155126, 0.074326)
-sjeng: (ipc_diff, 0.0105142909105%); (miss_latency_diff, -1.22814088354%); (miss_rate, 0.009159, 0.009002)
-gcc: (ipc_diff, 1.39138113253%); (miss_latency_diff, -4.87222464705%); (miss_rate, 0.031336, 0.026283)
-hmmer: (ipc_diff, 1.62187363957%); (miss_latency_diff, -15.1056452238%); (miss_rate, 0.013252, 0.00962)
-calculix: (ipc_diff, 0.261795362482%); (miss_latency_diff, -0.501990751896%); (miss_rate, 0.194078, 0.187675)
-astar: (ipc_diff, 0.0156403746401%); (miss_latency_diff, -1.66058355211%); (miss_rate, 0.001696, 0.001576)
-milc: (ipc_diff, 0.0404328121323%); (miss_latency_diff, -2.87606645712%); (miss_rate, 0.00062, 0.000539)
-povray: (ipc_diff, 0.353914832697%); (miss_latency_diff, -5.91182323728%); (miss_rate, 0.007287, 0.006005)
-tonto: (ipc_diff, 10.1792320529%); (miss_latency_diff, -23.7705531935%); (miss_rate, 0.084643, 0.057156)
-gobmk: (ipc_diff, 0.190564032735%); (miss_latency_diff, 0.0581388000657%); (miss_rate, 0.000788, 0.00078)
-
-data:
-hmmer: (ipc_diff, 0.352873652809%); (miss_latency_diff, -1.13768300341%); (miss_rate, 0.397677, 0.39233)
-sphinx3: (ipc_diff, 0.405922166681%); (miss_latency_diff, -1.11460378369%); (miss_rate, 0.042841, 0.041584)
-lbm: (ipc_diff, 0.0207062916067%); (miss_latency_diff, -0.33931890753%); (miss_rate, 0.000843, 0.000856)
-bzip2: (ipc_diff, 0.0774009664877%); (miss_latency_diff, -3.40267519499%); (miss_rate, 0.002286, 0.002118)
-mcf: (ipc_diff, 3.1532529428%); (miss_latency_diff, -3.99543040487%); (miss_rate, 0.654073, 0.611502)
-h264ref: (ipc_diff, 22.3004603037%); (miss_latency_diff, -24.5397079648%); (miss_rate, 0.487936, 0.357053)
-gobmk: (ipc_diff, 1.37542864257%); (miss_latency_diff, 0.440076086712%); (miss_rate, 0.00137, 0.001395)
-
-data_fit_4:
-leslie3d: (ipc_diff, 0.546366491115%); (miss_latency_diff, -19.9088977947%); (miss_rate, 0.329491, 0.209588)
-namd: (ipc_diff, 28.822565795%); (miss_latency_diff, -29.773733574%); (miss_rate, 0.454397, 0.253522)
-GemsFDTD: (ipc_diff, 2.61822894753%); (miss_latency_diff, -2.74415852169%); (miss_rate, 0.305221, 0.265724)
-xalancbmk: (ipc_diff, 7.04578467421%); (miss_latency_diff, -10.7150337965%); (miss_rate, 0.308695, 0.236214)
-mcf: (ipc_diff, 38.6683039382%); (miss_latency_diff, -39.9139545247%); (miss_rate, 0.445161, 0.224961)
-gcc: (ipc_diff, 9.88742753656%); (miss_latency_diff, -16.7438613528%); (miss_rate, 0.160464, 0.114352)
-hmmer: (ipc_diff, 7.95784841642%); (miss_latency_diff, -9.83153365601%); (miss_rate, 0.213884, 0.154153)
-libquantum: (ipc_diff, 0.160224724325%); (miss_latency_diff, -2.58509759736%); (miss_rate, 0.007174, 0.006218)
-h264ref: (ipc_diff, 4.94527614714%); (miss_latency_diff, -10.2302569974%); (miss_rate, 0.121145, 0.10354)
-tonto: (ipc_diff, 17.26934455%); (miss_latency_diff, -25.0643272482%); (miss_rate, 0.163795, 0.106222)
-bwaves: (ipc_diff, 0.135346889736%); (miss_latency_diff, -8.45311759575%); (miss_rate, 0.003387, 0.002521)
-lbm: (ipc_diff, 0.0075195743921%); (miss_latency_diff, -1.07341781279%); (miss_rate, 0.000615, 0.00057)
-gobmk: (ipc_diff, 0.0503853909849%); (miss_latency_diff, -0.329338798274%); (miss_rate, 0.000983, 0.000923)
-
-data_fit_16:
-leslie3d: (ipc_diff, 0.125676620748%); (miss_latency_diff, -5.90353736673%); (miss_rate, 0.109597, 0.089167)
-gromacs: (ipc_diff, 0.129137126281%); (miss_latency_diff, -3.22436676714%); (miss_rate, 0.002544, 0.00223)
-GemsFDTD: (ipc_diff, 1.69939047886%); (miss_latency_diff, -2.06605243011%); (miss_rate, 0.193361, 0.173183)
-xalancbmk: (ipc_diff, 15.5856996394%); (miss_latency_diff, -25.3696705237%); (miss_rate, 0.181471, 0.113365)
-omnetpp: (ipc_diff, 0.00734526087502%); (miss_latency_diff, -0.418464602399%); (miss_rate, 0.001128, 0.001097)
-mcf: (ipc_diff, 32.3152801461%); (miss_latency_diff, -47.9449602251%); (miss_rate, 0.155126, 0.074326)
-sjeng: (ipc_diff, 0.0105142909105%); (miss_latency_diff, -1.22814088354%); (miss_rate, 0.009159, 0.009002)
-gcc: (ipc_diff, 1.39138113253%); (miss_latency_diff, -4.87222464705%); (miss_rate, 0.031336, 0.026283)
-hmmer: (ipc_diff, 1.62187363957%); (miss_latency_diff, -15.1056452238%); (miss_rate, 0.013252, 0.00962)
-calculix: (ipc_diff, 0.261795362482%); (miss_latency_diff, -0.501990751896%); (miss_rate, 0.194078, 0.187675)
-astar: (ipc_diff, 0.0156403746401%); (miss_latency_diff, -1.66058355211%); (miss_rate, 0.001696, 0.001576)
-milc: (ipc_diff, 0.0404328121323%); (miss_latency_diff, -2.87606645712%); (miss_rate, 0.00062, 0.000539)
-povray: (ipc_diff, 0.353914832697%); (miss_latency_diff, -5.91182323728%); (miss_rate, 0.007287, 0.006005)
-tonto: (ipc_diff, 10.1792320529%); (miss_latency_diff, -23.7705531935%); (miss_rate, 0.084643, 0.057156)
-gobmk: (ipc_diff, 0.190564032735%); (miss_latency_diff, 0.0581388000657%); (miss_rate, 0.000788, 0.00078)
-
-data_mem_64:
-xalancbmk: (ipc_diff, 2.03705315287%); (miss_latency_diff, -11.5525713217%); (miss_rate, 0.04082, 0.031141)
-gcc: (ipc_diff, 0.0542719459424%); (miss_latency_diff, 0.152122485518%); (miss_rate, 0.003574, 0.003487)
-hmmer: (ipc_diff, 0.070371729259%); (miss_latency_diff, -1.05320464835%); (miss_rate, 0.00115, 0.001133)
-astar: (ipc_diff, 0.000227443654623%); (miss_latency_diff, -1.14211919981%); (miss_rate, 0.001118, 0.00107)
-povray: (ipc_diff, 0.0984758145412%); (miss_latency_diff, -2.39604418365%); (miss_rate, 0.002175, 0.001941)
-tonto: (ipc_diff, 1.53872734733%); (miss_latency_diff, -12.4972018004%); (miss_rate, 0.0137, 0.010515)
-
-data_4:
-hmmer: (ipc_diff, 12.2252277822%); (miss_latency_diff, -16.7010193223%); (miss_rate, 0.213878, 0.203299)
-sphinx3: (ipc_diff, 4.76888350748%); (miss_latency_diff, -15.5292162083%); (miss_rate, 0.03244, 0.026342)
-milc: (ipc_diff, 0.0651802537179%); (miss_latency_diff, -1.85776596602%); (miss_rate, 0.001104, 0.001082)
-tonto: (ipc_diff, 7.08522227678%); (miss_latency_diff, -11.0306740933%); (miss_rate, 0.163793, 0.145219)
-bwaves: (ipc_diff, 0.0279952192779%); (miss_latency_diff, -2.98382394819%); (miss_rate, 0.003387, 0.003263)
-mcf: (ipc_diff, 30.3217300295%); (miss_latency_diff, -31.4725414872%); (miss_rate, 0.445155, 0.314537)
-gcc: (ipc_diff, 2.72791272953%); (miss_latency_diff, -6.11867858181%); (miss_rate, 0.160453, 0.145283)
-xalancbmk: (ipc_diff, 0.576361370021%); (miss_latency_diff, -1.82280826469%); (miss_rate, 0.30869, 0.297981)
-namd: (ipc_diff, 23.8818141598%); (miss_latency_diff, -24.6242404273%); (miss_rate, 0.45439, 0.335425)
-libquantum: (ipc_diff, 0.0668769701524%); (miss_latency_diff, -0.83374745299%); (miss_rate, 0.007184, 0.007122)
-
-data_8:
-GemsFDTD: (ipc_diff, 0.999884219058%); (miss_latency_diff, -0.680647618364%); (miss_rate, 0.241001, 0.234069)
-hmmer: (ipc_diff, 13.2666579818%); (miss_latency_diff, -25.8861611067%); (miss_rate, 0.089052, 0.0676)
-sphinx3: (ipc_diff, 1.44275689323%); (miss_latency_diff, -6.5951220923%); (miss_rate, 0.020352, 0.018633)
-milc: (ipc_diff, 0.129451015524%); (miss_latency_diff, -1.96828606174%); (miss_rate, 0.00081, 0.000777)
-tonto: (ipc_diff, 8.1923665354%); (miss_latency_diff, -14.3489851262%); (miss_rate, 0.136932, 0.117969)
-sjeng: (ipc_diff, 0.00237969643006%); (miss_latency_diff, -0.751413198372%); (miss_rate, 0.009708, 0.009384)
-mcf: (ipc_diff, 14.4016494237%); (miss_latency_diff, -23.5237245526%); (miss_rate, 0.187883, 0.150152)
-xalancbmk: (ipc_diff, 5.84570005591%); (miss_latency_diff, -9.82270124782%); (miss_rate, 0.235062, 0.20722)
-libquantum: (ipc_diff, 0.135499613219%); (miss_latency_diff, -2.01867759712%); (miss_rate, 0.004507, 0.004278)
-gobmk: (ipc_diff, 2.22904682672%); (miss_latency_diff, -1.5505566256%); (miss_rate, 0.000862, 0.000827)
+sjeng: (ipc_diff, 0.01051429091054022%); (miss_latency_diff, -1.2281408835449272%); (miss_rate, -1.7141609345998567%）
+tonto: (ipc_diff, 10.17923205286658%); (miss_latency_diff, -23.77055319345063%); (miss_rate, -32.47403801850123%）
+xalancbmk: (ipc_diff, 15.58569963940714%); (miss_latency_diff, -25.36967052365398%); (miss_rate, -37.52996346523687%）
+leslie3d: (ipc_diff, 0.12567662074788197%); (miss_latency_diff, -5.90353736673267%); (miss_rate, -18.641021195835656%）
+gcc: (ipc_diff, 1.3913811325256125%); (miss_latency_diff, -4.872224647047074%); (miss_rate, -16.125223385243814%）
+hmmer: (ipc_diff, 1.6218736395680404%); (miss_latency_diff, -15.105645223791058%); (miss_rate, -27.40718382130999%）
+GemsFDTD: (ipc_diff, 1.699390478859423%); (miss_latency_diff, -2.0660524301063914%); (miss_rate, -10.435403209540704%）
+calculix: (ipc_diff, 0.2617953624821425%); (miss_latency_diff, -0.5019907518960908%); (miss_rate, -3.299188985871656%）
+milc: (ipc_diff, 0.040432812132264476%); (miss_latency_diff, -2.876066457117198%); (miss_rate, -13.06451612903226%）
+povray: (ipc_diff, 0.35391483269729307%); (miss_latency_diff, -5.911823237276322%); (miss_rate, -17.592973788939208%）
+gromacs: (ipc_diff, 0.12913712628133694%); (miss_latency_diff, -3.224366767140169%); (miss_rate, -12.34276729559747%）
+gobmk: (ipc_diff, 0.1905640327351539%); (miss_latency_diff, 0.05813880006572212%); (miss_rate, -1.0152284263959364%）
+astar: (ipc_diff, 0.015640374640114103%); (miss_latency_diff, -1.6605835521120147%); (miss_rate, -7.075471698113214%）
+mcf: (ipc_diff, 32.31528014606953%); (miss_latency_diff, -47.94496022511321%); (miss_rate, -52.0866908190761%）
+omnetpp: (ipc_diff, 0.007345260875022281%); (miss_latency_diff, -0.4184646023993551%); (miss_rate, -2.748226950354609%）
 
 data_16:
-GemsFDTD: (ipc_diff, 0.911740527614%); (miss_latency_diff, -0.840549656805%); (miss_rate, 0.1926, 0.180501)
-hmmer: (ipc_diff, 1.27731052768%); (miss_latency_diff, -13.5252755469%); (miss_rate, 0.013253, 0.009991)
-sphinx3: (ipc_diff, 0.329295130697%); (miss_latency_diff, -3.62758044278%); (miss_rate, 0.008119, 0.00722)
-tonto: (ipc_diff, 3.2163861961%); (miss_latency_diff, -8.26297000504%); (miss_rate, 0.084641, 0.078837)
-wrf: (ipc_diff, 0.0160037697769%); (miss_latency_diff, -0.818796110877%); (miss_rate, 0.182976, 0.176645)
-calculix: (ipc_diff, 0.126381218866%); (miss_latency_diff, 1.38757997377%); (miss_rate, 0.193882, 0.190988)
-astar: (ipc_diff, 0.0123270149985%); (miss_latency_diff, -2.42964790465%); (miss_rate, 0.001687, 0.001649)
-povray: (ipc_diff, 0.213720802361%); (miss_latency_diff, -4.44404652816%); (miss_rate, 0.007281, 0.006693)
-mcf: (ipc_diff, 19.1283577461%); (miss_latency_diff, -35.8995727154%); (miss_rate, 0.155119, 0.100791)
-gcc: (ipc_diff, 0.23379087603%); (miss_latency_diff, 1.31629405731%); (miss_rate, 0.031328, 0.032148)
-xalancbmk: (ipc_diff, 12.2361635999%); (miss_latency_diff, -19.7333034599%); (miss_rate, 0.181512, 0.13977)
+xalancbmk: (ipc_diff, 12.23616359987931%); (miss_latency_diff, -19.7333034599017%); (miss_rate, -22.996826656088853%）
+mcf: (ipc_diff, 19.128357746147913%); (miss_latency_diff, -35.899572715376365%); (miss_rate, -35.02343362192897%）
+astar: (ipc_diff, 0.012327014998518857%); (miss_latency_diff, -2.429647904652169%); (miss_rate, -2.2525192649673884%）
+sphinx3: (ipc_diff, 0.3292951306974189%); (miss_latency_diff, -3.6275804427843314%); (miss_rate, -11.072792215790118%）
+povray: (ipc_diff, 0.21372080236129234%); (miss_latency_diff, -4.4440465281599675%); (miss_rate, -8.0758137618459%）
+wrf: (ipc_diff, 0.016003769776872102%); (miss_latency_diff, -0.8187961108768673%); (miss_rate, -3.460016614200771%）
+tonto: (ipc_diff, 3.2163861961032447%); (miss_latency_diff, -8.262970005038463%); (miss_rate, -6.857196866766684%）
+gcc: (ipc_diff, 0.23379087603031276%); (miss_latency_diff, 1.3162940573148534%); (miss_rate, 2.6174668028600654%）
+hmmer: (ipc_diff, 1.2773105276822734%); (miss_latency_diff, -13.525275546903787%); (miss_rate, -24.613295102995544%）
+GemsFDTD: (ipc_diff, 0.9117405276137774%); (miss_latency_diff, -0.8405496568048455%); (miss_rate, -6.281931464174454%）
+calculix: (ipc_diff, 0.12638121886571982%); (miss_latency_diff, 1.387579973773603%); (miss_rate, -1.4926604842120506%）
 
-data_64:
-sphinx3: (ipc_diff, 0.0121524209994%); (miss_latency_diff, -0.312466523676%); (miss_rate, 0.003101, 0.002938)
-tonto: (ipc_diff, 1.01186739095%); (miss_latency_diff, -9.11302690358%); (miss_rate, 0.013693, 0.01149)
-wrf: (ipc_diff, 0.0131047858678%); (miss_latency_diff, -0.135910427926%); (miss_rate, 0.155829, 0.152907)
-povray: (ipc_diff, 0.0874349720919%); (miss_latency_diff, -3.28519529443%); (miss_rate, 0.002181, 0.001995)
-mcf: (ipc_diff, 0.107534919702%); (miss_latency_diff, -1.40208772452%); (miss_rate, 0.000475, 0.000477)
-gcc: (ipc_diff, 0.0267143947011%); (miss_latency_diff, -0.259211064412%); (miss_rate, 0.003573, 0.00357)
-h264ref: (ipc_diff, 0.00522041477674%); (miss_latency_diff, -0.804149232397%); (miss_rate, 0.003816, 0.003765)
-xalancbmk: (ipc_diff, 1.17901233045%); (miss_latency_diff, -8.45404398586%); (miss_rate, 0.040816, 0.03422)
-
-data_cons_4:
-namd: (ipc_diff, 29.502218077%); (miss_latency_diff, -28.2437948848%); (miss_rate, 0.45439, 0.323976)
-GemsFDTD: (ipc_diff, 4.29842520449%); (miss_latency_diff, -2.83287356354%); (miss_rate, 0.303894, 0.269095)
-xalancbmk: (ipc_diff, 16.7328979926%); (miss_latency_diff, -19.9340081932%); (miss_rate, 0.30869, 0.233791)
-mcf: (ipc_diff, 32.3979557162%); (miss_latency_diff, -34.276453728%); (miss_rate, 0.445155, 0.298415)
-gcc: (ipc_diff, 12.8261501398%); (miss_latency_diff, -18.950757626%); (miss_rate, 0.160453, 0.123693)
-hmmer: (ipc_diff, 21.6429278917%); (miss_latency_diff, -27.9375818976%); (miss_rate, 0.213878, 0.146767)
-calculix: (ipc_diff, 1.05369892226%); (miss_latency_diff, -1.36163739095%); (miss_rate, 0.295033, 0.281758)
-astar: (ipc_diff, 2.83374725926%); (miss_latency_diff, -8.38347555496%); (miss_rate, 0.100855, 0.087049)
-libquantum: (ipc_diff, 0.243176390606%); (miss_latency_diff, -3.09721261191%); (miss_rate, 0.007184, 0.006361)
-h264ref: (ipc_diff, 2.04508796744%); (miss_latency_diff, -4.11286190784%); (miss_rate, 0.121094, 0.115946)
-povray: (ipc_diff, 2.70699976497%); (miss_latency_diff, -12.7804923328%); (miss_rate, 0.026276, 0.021934)
-tonto: (ipc_diff, 15.9074351098%); (miss_latency_diff, -23.309211751%); (miss_rate, 0.163793, 0.123395)
-bwaves: (ipc_diff, 0.0710647873978%); (miss_latency_diff, -7.93811717303%); (miss_rate, 0.003387, 0.002821)
-
-data_128:
-mcf: (ipc_diff, 0.127560555259%); (miss_latency_diff, -0.281124883454%); (miss_rate, 0.000471, 0.000471)
-gcc: (ipc_diff, 0.0247796871973%); (miss_latency_diff, -0.917278852071%); (miss_rate, 0.002505, 0.002459)
-tonto: (ipc_diff, 0.57237699828%); (miss_latency_diff, -7.41884270511%); (miss_rate, 0.005501, 0.00436)
-
-data_temp_cons_4:
-bzip2: (ipc_diff, 0.00318672864096%); (miss_latency_diff, 0.00448949914232%); (miss_rate, 0.006603, 0.006435)
-leslie3d: (ipc_diff, 3.94929798324%); (miss_latency_diff, -14.9304526698%); (miss_rate, 0.33256, 0.25565)
-namd: (ipc_diff, 28.7904384942%); (miss_latency_diff, -27.0344959406%); (miss_rate, 0.445519, 0.316479)
-GemsFDTD: (ipc_diff, 4.29842520449%); (miss_latency_diff, -2.83287356354%); (miss_rate, 0.303894, 0.269095)
-xalancbmk: (ipc_diff, 3.24053625927%); (miss_latency_diff, -5.02703165349%); (miss_rate, 0.146886, 0.132274)
-mcf: (ipc_diff, 30.2822225746%); (miss_latency_diff, -32.3540211388%); (miss_rate, 0.442927, 0.302075)
-sjeng: (ipc_diff, 0.00628661461874%); (miss_latency_diff, 0.808732138792%); (miss_rate, 0.011119, 0.010887)
-gcc: (ipc_diff, 1.63876467535%); (miss_latency_diff, -4.94392193678%); (miss_rate, 0.015467, 0.013106)
-hmmer: (ipc_diff, 24.1497735205%); (miss_latency_diff, -24.5668952102%); (miss_rate, 0.341175, 0.234663)
-calculix: (ipc_diff, 1.05369892226%); (miss_latency_diff, -1.36163739095%); (miss_rate, 0.295033, 0.281758)
-astar: (ipc_diff, 0.210738962513%); (miss_latency_diff, -1.3437587492%); (miss_rate, 0.24544, 0.229478)
-libquantum: (ipc_diff, 1.71160013164%); (miss_latency_diff, -5.88134041691%); (miss_rate, 0.043972, 0.038292)
-h264ref: (ipc_diff, 4.8939995153%); (miss_latency_diff, -7.42924537605%); (miss_rate, 0.147609, 0.133884)
-milc: (ipc_diff, 0.115191739017%); (miss_latency_diff, -4.93129653244%); (miss_rate, 0.010937, 0.009681)
-povray: (ipc_diff, 6.87511726155%); (miss_latency_diff, -10.8375905633%); (miss_rate, 0.140572, 0.119685)
-tonto: (ipc_diff, 6.80270341875%); (miss_latency_diff, -10.9575429521%); (miss_rate, 0.095691, 0.078468)
-bwaves: (ipc_diff, 0.553010783472%); (miss_latency_diff, -7.93811717303%); (miss_rate, 0.033057, 0.027478)
-
-data_cons_8:
-bzip2: (ipc_diff, 0.024917128301%); (miss_latency_diff, -0.603672200693%); (miss_rate, 0.000593, 0.000586)
-leslie3d: (ipc_diff, 0.467080494293%); (miss_latency_diff, -11.0806151763%); (miss_rate, 0.230482, 0.185923)
-namd: (ipc_diff, 7.77098331545%); (miss_latency_diff, -11.1333806175%); (miss_rate, 0.210435, 0.180252)
-GemsFDTD: (ipc_diff, 2.74817645016%); (miss_latency_diff, -1.51023004723%); (miss_rate, 0.241001, 0.219614)
-xalancbmk: (ipc_diff, 16.6212177607%); (miss_latency_diff, -22.4937970464%); (miss_rate, 0.235062, 0.171144)
-mcf: (ipc_diff, 17.4244079954%); (miss_latency_diff, -29.5575610003%); (miss_rate, 0.187883, 0.13088)
-sjeng: (ipc_diff, 0.00237969643006%); (miss_latency_diff, -0.827005817427%); (miss_rate, 0.009708, 0.009509)
-gcc: (ipc_diff, 4.60457389707%); (miss_latency_diff, -11.7035763078%); (miss_rate, 0.074464, 0.064308)
-hmmer: (ipc_diff, 8.44427481032%); (miss_latency_diff, -17.6973221755%); (miss_rate, 0.089052, 0.073522)
-calculix: (ipc_diff, 0.581286803478%); (miss_latency_diff, -0.503343547502%); (miss_rate, 0.224695, 0.216305)
-libquantum: (ipc_diff, 0.136004609236%); (miss_latency_diff, -1.6180511055%); (miss_rate, 0.004507, 0.004125)
-h264ref: (ipc_diff, 0.056633681651%); (miss_latency_diff, 7.8651837074%); (miss_rate, 0.020891, 0.022834)
-milc: (ipc_diff, 0.182959456366%); (miss_latency_diff, -2.07828869226%); (miss_rate, 0.00081, 0.00076)
-povray: (ipc_diff, 2.17113723159%); (miss_latency_diff, -14.1432290222%); (miss_rate, 0.016111, 0.012673)
-tonto: (ipc_diff, 13.04590692%); (miss_latency_diff, -21.5941392079%); (miss_rate, 0.136932, 0.105088)
-gobmk: (ipc_diff, 2.20185405277%); (miss_latency_diff, -1.37975312231%); (miss_rate, 0.000862, 0.000839)
-
-data_cons_16:
-leslie3d: (ipc_diff, 0.492318375141%); (miss_latency_diff, -3.1281464334%); (miss_rate, 0.109578, 0.101547)
-namd: (ipc_diff, 2.44096310089%); (miss_latency_diff, -10.2160968808%); (miss_rate, 0.052957, 0.0459)
-gromacs: (ipc_diff, 0.0954719479436%); (miss_latency_diff, -0.463946779678%); (miss_rate, 0.002543, 0.002445)
-GemsFDTD: (ipc_diff, 0.684904407918%); (miss_latency_diff, -0.202727026799%); (miss_rate, 0.1926, 0.183421)
-xalancbmk: (ipc_diff, 14.917589815%); (miss_latency_diff, -22.7040051871%); (miss_rate, 0.181512, 0.131367)
-omnetpp: (ipc_diff, 0.0140739905804%); (miss_latency_diff, 2.18966351355%); (miss_rate, 0.001122, 0.001113)
-mcf: (ipc_diff, 19.0680373211%); (miss_latency_diff, -35.1868852321%); (miss_rate, 0.155119, 0.102246)
-gcc: (ipc_diff, 2.57950238859%); (miss_latency_diff, -10.472587814%); (miss_rate, 0.031328, 0.026462)
-hmmer: (ipc_diff, 1.27731052768%); (miss_latency_diff, -12.9824772853%); (miss_rate, 0.013253, 0.010201)
-calculix: (ipc_diff, 0.112612058834%); (miss_latency_diff, 1.45059904167%); (miss_rate, 0.193882, 0.18995)
-astar: (ipc_diff, 0.0204135368376%); (miss_latency_diff, -3.96842491093%); (miss_rate, 0.001687, 0.001599)
-povray: (ipc_diff, 0.615011173709%); (miss_latency_diff, -7.03595264049%); (miss_rate, 0.007281, 0.006245)
-tonto: (ipc_diff, 7.51655560227%); (miss_latency_diff, -16.4892309665%); (miss_rate, 0.084641, 0.06816)
-
-data_cons_64:
-xalancbmk: (ipc_diff, 0.891825454199%); (miss_latency_diff, -5.25395439273%); (miss_rate, 0.040816, 0.036325)
-mcf: (ipc_diff, 0.107534919702%); (miss_latency_diff, -1.40208772452%); (miss_rate, 0.000475, 0.000477)
-gcc: (ipc_diff, 0.105594486856%); (miss_latency_diff, -0.700067977606%); (miss_rate, 0.003573, 0.003431)
-h264ref: (ipc_diff, 0.00522041477674%); (miss_latency_diff, -0.767669089704%); (miss_rate, 0.003816, 0.003776)
-povray: (ipc_diff, 0.106522471084%); (miss_latency_diff, -3.40461278095%); (miss_rate, 0.002181, 0.002019)
-tonto: (ipc_diff, 1.19157294681%); (miss_latency_diff, -10.4661547574%); (miss_rate, 0.013693, 0.01133)
-
-data_temp_8:
-bzip2: (ipc_diff, 0.477840144338%); (miss_latency_diff, -1.25601285051%); (miss_rate, 0.005342, 0.00524)
-leslie3d: (ipc_diff, 1.87994033167%); (miss_latency_diff, -8.42210091752%); (miss_rate, 0.232667, 0.197899)
-GemsFDTD: (ipc_diff, 0.999884219058%); (miss_latency_diff, -0.680647618364%); (miss_rate, 0.241001, 0.234069)
-mcf: (ipc_diff, 4.00546205616%); (miss_latency_diff, -5.85196457414%); (miss_rate, 0.189412, 0.174592)
-sjeng: (ipc_diff, 0.00765863688046%); (miss_latency_diff, -0.397065403701%); (miss_rate, 0.009671, 0.009347)
-gcc: (ipc_diff, 0.153815801526%); (miss_latency_diff, -0.641233022237%); (miss_rate, 0.00922, 0.009212)
-hmmer: (ipc_diff, 14.2577524918%); (miss_latency_diff, -17.5749290188%); (miss_rate, 0.146475, 0.115648)
-astar: (ipc_diff, 0.0919500827104%); (miss_latency_diff, -0.89776329516%); (miss_rate, 0.175365, 0.175826)
-libquantum: (ipc_diff, 0.983184721026%); (miss_latency_diff, -2.08177345966%); (miss_rate, 0.028995, 0.027336)
-milc: (ipc_diff, 0.0954624852744%); (miss_latency_diff, -1.96828606174%); (miss_rate, 0.008032, 0.007707)
-tonto: (ipc_diff, 2.97155572737%); (miss_latency_diff, -6.45903131763%); (miss_rate, 0.074157, 0.066728)
-
-data_temp_16:
-GemsFDTD: (ipc_diff, 0.911740527614%); (miss_latency_diff, -0.840549656805%); (miss_rate, 0.1926, 0.180501)
-xalancbmk: (ipc_diff, 0.0481776314237%); (miss_latency_diff, -0.995620897551%); (miss_rate, 0.04353, 0.042199)
-mcf: (ipc_diff, 21.5494530142%); (miss_latency_diff, -34.7746980113%); (miss_rate, 0.156807, 0.097008)
-hmmer: (ipc_diff, 1.50145947763%); (miss_latency_diff, -4.94269297969%); (miss_rate, 0.029557, 0.025471)
-calculix: (ipc_diff, 0.126381218866%); (miss_latency_diff, 1.38757997377%); (miss_rate, 0.193882, 0.190988)
-astar: (ipc_diff, 0.0593483955468%); (miss_latency_diff, -3.67972959221%); (miss_rate, 0.157642, 0.154426)
-povray: (ipc_diff, 0.514425935177%); (miss_latency_diff, -3.04933698286%); (miss_rate, 0.037276, 0.034815)
-tonto: (ipc_diff, 1.15698459596%); (miss_latency_diff, -2.78538826856%); (miss_rate, 0.04541, 0.042056)
-
-data_fit_8:
-leslie3d: (ipc_diff, 0.445328292031%); (miss_latency_diff, -17.5433792455%); (miss_rate, 0.230539, 0.150778)
-namd: (ipc_diff, 7.96749819541%); (miss_latency_diff, -15.1049892049%); (miss_rate, 0.210437, 0.152961)
-GemsFDTD: (ipc_diff, 1.66776810956%); (miss_latency_diff, -1.1657062644%); (miss_rate, 0.242015, 0.213541)
-xalancbmk: (ipc_diff, 12.9951289095%); (miss_latency_diff, -20.0584169135%); (miss_rate, 0.235175, 0.157612)
-mcf: (ipc_diff, 6.98472824612%); (miss_latency_diff, -14.6678998611%); (miss_rate, 0.18789, 0.154637)
-sjeng: (ipc_diff, 0.00369368550256%); (miss_latency_diff, -1.77557055968%); (miss_rate, 0.009728, 0.009339)
-gcc: (ipc_diff, 1.2265712617%); (miss_latency_diff, -4.34382170119%); (miss_rate, 0.074464, 0.06429)
-hmmer: (ipc_diff, 21.3038525718%); (miss_latency_diff, -40.8861345086%); (miss_rate, 0.08905, 0.04519)
-calculix: (ipc_diff, 0.243163837276%); (miss_latency_diff, 0.418518908086%); (miss_rate, 0.224921, 0.214371)
-libquantum: (ipc_diff, 0.117090985252%); (miss_latency_diff, 0.518606403856%); (miss_rate, 0.004494, 0.004063)
-milc: (ipc_diff, 0.336425299667%); (miss_latency_diff, -5.2817629305%); (miss_rate, 0.00081, 0.000643)
-povray: (ipc_diff, 0.748924667331%); (miss_latency_diff, -6.05675179237%); (miss_rate, 0.01611, 0.013032)
-tonto: (ipc_diff, 19.3386105237%); (miss_latency_diff, -30.8471476511%); (miss_rate, 0.13693, 0.081385)
-bwaves: (ipc_diff, 0.0664977719632%); (miss_latency_diff, -8.12891523907%); (miss_rate, 0.002488, 0.001822)
-lbm: (ipc_diff, 0.00563968079407%); (miss_latency_diff, -1.76432129801%); (miss_rate, 0.000516, 0.000481)
-gobmk: (ipc_diff, 0.415779344405%); (miss_latency_diff, -0.496399872214%); (miss_rate, 0.000856, 0.000808)
+data_temp_4:
+libquantum: (ipc_diff, 0.6928503403199232%); (miss_latency_diff, -1.7708448049284824%); (miss_rate, -3.518147912307832%）
+mcf: (ipc_diff, 28.41874007532983%); (miss_latency_diff, -29.83473909473899%); (miss_rate, -28.477153120040093%）
+namd: (ipc_diff, 21.832121016746196%); (miss_latency_diff, -22.29890745027498%); (miss_rate, -24.510963617713273%）
+astar: (ipc_diff, 0.058733479522434275%); (miss_latency_diff, -0.11299330148713571%); (miss_rate, -1.503422425032594%）
+leslie3d: (ipc_diff, 2.9751862123038113%); (miss_latency_diff, -10.802365585577162%); (miss_rate, -16.50168390666347%）
+bwaves: (ipc_diff, 0.3344784807710694%); (miss_latency_diff, -2.9838239481931463%); (miss_rate, -3.729921045466935%）
+tonto: (ipc_diff, 3.078385637178763%); (miss_latency_diff, -4.651053307034142%); (miss_rate, -8.46265584015215%）
+gcc: (ipc_diff, 1.047761191844837%); (miss_latency_diff, -2.9020633835113436%); (miss_rate, -6.187366651580782%）
+hmmer: (ipc_diff, 5.204641649284124%); (miss_latency_diff, -6.405672167375069%); (miss_rate, 4.763537773869712%）
+h264ref: (ipc_diff, 1.2638310647794797%); (miss_latency_diff, 0.016169770788813296%); (miss_rate, -0.9111910520361124%）
+milc: (ipc_diff, 0.6083070601490143%); (miss_latency_diff, -1.9546650595846582%); (miss_rate, -1.6457895218067233%）
 
 data_mem_4:
-leslie3d: (ipc_diff, 0.546366491115%); (miss_latency_diff, -19.9088977947%); (miss_rate, 0.329491, 0.209588)
-namd: (ipc_diff, 28.822565795%); (miss_latency_diff, -29.773733574%); (miss_rate, 0.454397, 0.253522)
-GemsFDTD: (ipc_diff, 2.61822894753%); (miss_latency_diff, -2.74415852169%); (miss_rate, 0.305221, 0.265724)
-xalancbmk: (ipc_diff, 7.04578467421%); (miss_latency_diff, -10.7150337965%); (miss_rate, 0.308695, 0.236214)
-mcf: (ipc_diff, 38.6683039382%); (miss_latency_diff, -39.9139545247%); (miss_rate, 0.445161, 0.224961)
-gcc: (ipc_diff, 9.88742753656%); (miss_latency_diff, -16.7438613528%); (miss_rate, 0.160464, 0.114352)
-hmmer: (ipc_diff, 7.95784841642%); (miss_latency_diff, -9.83153365601%); (miss_rate, 0.213884, 0.154153)
-libquantum: (ipc_diff, 0.160224724325%); (miss_latency_diff, -2.58509759736%); (miss_rate, 0.007174, 0.006218)
-h264ref: (ipc_diff, 4.94527614714%); (miss_latency_diff, -10.2302569974%); (miss_rate, 0.121145, 0.10354)
-tonto: (ipc_diff, 17.26934455%); (miss_latency_diff, -25.0643272482%); (miss_rate, 0.163795, 0.106222)
-bwaves: (ipc_diff, 0.135346889736%); (miss_latency_diff, -8.45311759575%); (miss_rate, 0.003387, 0.002521)
-lbm: (ipc_diff, 0.0075195743921%); (miss_latency_diff, -1.07341781279%); (miss_rate, 0.000615, 0.00057)
-gobmk: (ipc_diff, 0.0503853909849%); (miss_latency_diff, -0.329338798274%); (miss_rate, 0.000983, 0.000923)
+namd: (ipc_diff, 28.822565794980328%); (miss_latency_diff, -29.773733573980582%); (miss_rate, -44.206937985946205%）
+tonto: (ipc_diff, 17.26934454998111%); (miss_latency_diff, -25.064327248151184%); (miss_rate, -35.14942458561006%）
+xalancbmk: (ipc_diff, 7.045784674214062%); (miss_latency_diff, -10.715033796501784%); (miss_rate, -23.479810168613028%）
+leslie3d: (ipc_diff, 0.5463664911146336%); (miss_latency_diff, -19.908897794713443%); (miss_rate, -36.39037181592213%）
+lbm: (ipc_diff, 0.007519574392096928%); (miss_latency_diff, -1.0734178127872813%); (miss_rate, -7.3170731707317085%）
+gcc: (ipc_diff, 9.887427536559274%); (miss_latency_diff, -16.74386135284375%); (miss_rate, -28.73666367534151%）
+h264ref: (ipc_diff, 4.945276147141154%); (miss_latency_diff, -10.230256997379904%); (miss_rate, -14.532172190350414%）
+hmmer: (ipc_diff, 7.957848416420589%); (miss_latency_diff, -9.831533656014074%); (miss_rate, -27.92682014549942%）
+GemsFDTD: (ipc_diff, 2.6182289475338654%); (miss_latency_diff, -2.744158521686011%); (miss_rate, -12.940459535877283%）
+bwaves: (ipc_diff, 0.1353468897357064%); (miss_latency_diff, -8.45311759575301%); (miss_rate, -25.56834957189253%）
+libquantum: (ipc_diff, 0.1602247243253273%); (miss_latency_diff, -2.585097597357285%); (miss_rate, -13.325899080011155%）
+gobmk: (ipc_diff, 0.05038539098490797%); (miss_latency_diff, -0.3293387982739762%); (miss_rate, -6.103763987792466%）
+mcf: (ipc_diff, 38.66830393819154%); (miss_latency_diff, -39.91395452471698%); (miss_rate, -49.46524965124978%）
+
+data_temp_cons_64:
+xalancbmk: (ipc_diff, 0.12323983301001795%); (miss_latency_diff, -1.0183558163339288%); (miss_rate, -4.800380228136887%）
+mcf: (ipc_diff, 0.31411465110995745%); (miss_latency_diff, -1.4588722467924986%); (miss_rate, 0.0%）
+gromacs: (ipc_diff, 0.002548156170106143%); (miss_latency_diff, -0.3482437535770714%); (miss_rate, -1.9746568109820453%）
+povray: (ipc_diff, 0.10666810691114241%); (miss_latency_diff, -2.3202701913517436%); (miss_rate, -2.939107324317997%）
+tonto: (ipc_diff, 0.5728034421171827%); (miss_latency_diff, -2.092189931662223%); (miss_rate, -6.261770244821093%）
+
+data_temp_cons_4:
+libquantum: (ipc_diff, 1.7116001316444287%); (miss_latency_diff, -5.881340416908149%); (miss_rate, -12.91731101610115%）
+xalancbmk: (ipc_diff, 3.240536259269483%); (miss_latency_diff, -5.027031653485423%); (miss_rate, -9.947850714159271%）
+mcf: (ipc_diff, 30.282222574588697%); (miss_latency_diff, -32.35402113881313%); (miss_rate, -31.80027408579744%）
+namd: (ipc_diff, 28.79043849422282%); (miss_latency_diff, -27.034495940636926%); (miss_rate, -28.96397235583667%）
+astar: (ipc_diff, 0.21073896251310792%); (miss_latency_diff, -1.343758749202378%); (miss_rate, -6.503422425032597%）
+leslie3d: (ipc_diff, 3.949297983244523%); (miss_latency_diff, -14.930452669834231%); (miss_rate, -23.12665383690162%）
+bwaves: (ipc_diff, 0.5530107834717154%); (miss_latency_diff, -7.938117173026348%); (miss_rate, -16.876909580421707%）
+povray: (ipc_diff, 6.875117261546625%); (miss_latency_diff, -10.837590563292382%); (miss_rate, -14.858577810659307%）
+bzip2: (ipc_diff, 0.003186728640958683%); (miss_latency_diff, 0.004489499142317105%); (miss_rate, -2.544298046342581%）
+tonto: (ipc_diff, 6.8027034187545725%); (miss_latency_diff, -10.957542952139686%); (miss_rate, -17.99855785810578%）
+gcc: (ipc_diff, 1.6387646753543406%); (miss_latency_diff, -4.943921936776217%); (miss_rate, -15.264757225059807%）
+sjeng: (ipc_diff, 0.006286614618742757%); (miss_latency_diff, 0.8087321387922095%); (miss_rate, -2.086518571814008%）
+hmmer: (ipc_diff, 24.149773520457433%); (miss_latency_diff, -24.5668952102218%); (miss_rate, -31.219169048142447%）
+h264ref: (ipc_diff, 4.89399951530234%); (miss_latency_diff, -7.429245376052438%); (miss_rate, -9.298213523565629%）
+GemsFDTD: (ipc_diff, 4.298425204490548%); (miss_latency_diff, -2.832873563542731%); (miss_rate, -11.451032267830238%）
+milc: (ipc_diff, 0.1151917390165479%); (miss_latency_diff, -4.9312965324388855%); (miss_rate, -11.483953552162385%）
+calculix: (ipc_diff, 1.0536989222583537%); (miss_latency_diff, -1.3616373909517947%); (miss_rate, -4.499496666474592%）
+
+data_128:
+mcf: (ipc_diff, 0.1275605552587506%); (miss_latency_diff, -0.2811248834538583%); (miss_rate, 0.0%）
+tonto: (ipc_diff, 0.5723769982801109%); (miss_latency_diff, -7.418842705108045%); (miss_rate, -20.741683330303577%）
+gcc: (ipc_diff, 0.02477968719732967%); (miss_latency_diff, -0.917278852070941%); (miss_rate, -1.8363273453093827%）
+
+data_cons_8:
+libquantum: (ipc_diff, 0.13600460923638638%); (miss_latency_diff, -1.6180511055036115%); (miss_rate, -8.4757044597293%）
+xalancbmk: (ipc_diff, 16.6212177607368%); (miss_latency_diff, -22.493797046378276%); (miss_rate, -27.1919748832223%）
+mcf: (ipc_diff, 17.42440799538666%); (miss_latency_diff, -29.557561000298534%); (miss_rate, -30.339626256766177%）
+namd: (ipc_diff, 7.770983315447566%); (miss_latency_diff, -11.133380617528983%); (miss_rate, -14.343146339724862%）
+gobmk: (ipc_diff, 2.201854052769195%); (miss_latency_diff, -1.3797531223122677%); (miss_rate, -2.668213457076568%）
+leslie3d: (ipc_diff, 0.4670804942934529%); (miss_latency_diff, -11.080615176300524%); (miss_rate, -19.332963094731905%）
+povray: (ipc_diff, 2.1711372315883977%); (miss_latency_diff, -14.14322902224947%); (miss_rate, -21.339457513500093%）
+bzip2: (ipc_diff, 0.0249171283009553%); (miss_latency_diff, -0.6036722006927399%); (miss_rate, -1.1804384485666026%）
+tonto: (ipc_diff, 13.045906920018995%); (miss_latency_diff, -21.594139207918445%); (miss_rate, -23.25533841614816%）
+gcc: (ipc_diff, 4.6045738970693755%); (miss_latency_diff, -11.703576307784198%); (miss_rate, -13.638805328749461%）
+sjeng: (ipc_diff, 0.002379696430061119%); (miss_latency_diff, -0.8270058174274428%); (miss_rate, -2.0498557890399622%）
+hmmer: (ipc_diff, 8.444274810323396%); (miss_latency_diff, -17.69732217549785%); (miss_rate, -17.43924897812514%）
+h264ref: (ipc_diff, 0.056633681650994624%); (miss_latency_diff, 7.865183707404948%); (miss_rate, 9.30065578478771%）
+GemsFDTD: (ipc_diff, 2.748176450156302%); (miss_latency_diff, -1.5102300472279588%); (miss_rate, -8.874237036360842%）
+milc: (ipc_diff, 0.18295945636636124%); (miss_latency_diff, -2.078288692259533%); (miss_rate, -6.17283950617283%）
+calculix: (ipc_diff, 0.5812868034776362%); (miss_latency_diff, -0.5033435475016367%); (miss_rate, -3.7339504661875025%）
+
+data_fit_64:
+xalancbmk: (ipc_diff, 2.03705315286764%); (miss_latency_diff, -11.552571321693165%); (miss_rate, -23.711415972562477%）
+astar: (ipc_diff, 0.00022744365462341735%); (miss_latency_diff, -1.1421191998056976%); (miss_rate, -4.293381037567091%）
+povray: (ipc_diff, 0.0984758145411678%); (miss_latency_diff, -2.3960441836523763%); (miss_rate, -10.758620689655165%）
+tonto: (ipc_diff, 1.538727347334993%); (miss_latency_diff, -12.49720180042668%); (miss_rate, -23.248175182481752%）
+gcc: (ipc_diff, 0.05427194594236841%); (miss_latency_diff, 0.15212248551837007%); (miss_rate, -2.4342473419138178%）
+hmmer: (ipc_diff, 0.07037172925901494%); (miss_latency_diff, -1.0532046483513404%); (miss_rate, -1.478260869565225%）
+
+data_8:
+libquantum: (ipc_diff, 0.1354996132189592%); (miss_latency_diff, -2.018677597119019%); (miss_rate, -5.080985134235634%）
+xalancbmk: (ipc_diff, 5.8457000559091465%); (miss_latency_diff, -9.822701247819516%); (miss_rate, -11.844534633415869%）
+mcf: (ipc_diff, 14.401649423728632%); (miss_latency_diff, -23.523724552553944%); (miss_rate, -20.082178802765544%）
+gobmk: (ipc_diff, 2.229046826717378%); (miss_latency_diff, -1.5505566256011436%); (miss_rate, -4.0603248259860765%）
+sphinx3: (ipc_diff, 1.4427568932270447%); (miss_latency_diff, -6.59512209229775%); (miss_rate, -8.446344339622634%）
+tonto: (ipc_diff, 8.192366535397635%); (miss_latency_diff, -14.348985126184635%); (miss_rate, -13.848479537288577%）
+sjeng: (ipc_diff, 0.002379696430061119%); (miss_latency_diff, -0.7514131983720013%); (miss_rate, -3.3374536464771287%）
+hmmer: (ipc_diff, 13.266657981805979%); (miss_latency_diff, -25.886161106706695%); (miss_rate, -24.089296141580213%）
+GemsFDTD: (ipc_diff, 0.9998842190575404%); (miss_latency_diff, -0.6806476183636573%); (miss_rate, -2.8763366127111483%）
+milc: (ipc_diff, 0.12945101552351437%); (miss_latency_diff, -1.9682860617437985%); (miss_rate, -4.074074074074066%）
+
+data_temp_16:
+xalancbmk: (ipc_diff, 0.048177631423742755%); (miss_latency_diff, -0.9956208975511953%); (miss_rate, -3.057661382954282%）
+mcf: (ipc_diff, 21.549453014219218%); (miss_latency_diff, -34.77469801134123%); (miss_rate, -38.13541487306052%）
+astar: (ipc_diff, 0.059348395546821454%); (miss_latency_diff, -3.679729592211599%); (miss_rate, -2.040065464787301%）
+povray: (ipc_diff, 0.51442593517667%); (miss_latency_diff, -3.0493369828640633%); (miss_rate, -6.602103229960291%）
+tonto: (ipc_diff, 1.1569845959608915%); (miss_latency_diff, -2.7853882685583558%); (miss_rate, -7.386038317551192%）
+hmmer: (ipc_diff, 1.5014594776302104%); (miss_latency_diff, -4.942692979690983%); (miss_rate, -13.824136414385762%）
+GemsFDTD: (ipc_diff, 0.9117405276137774%); (miss_latency_diff, -0.8405496568048455%); (miss_rate, -6.281931464174454%）
+calculix: (ipc_diff, 0.12638121886571982%); (miss_latency_diff, 1.387579973773603%); (miss_rate, -1.4926604842120506%）
+
+data_fit_8:
+libquantum: (ipc_diff, 0.11709098525170174%); (miss_latency_diff, 0.5186064038563423%); (miss_rate, -9.590565198041833%）
+xalancbmk: (ipc_diff, 12.995128909486185%); (miss_latency_diff, -20.058416913482706%); (miss_rate, -32.98097161688104%）
+mcf: (ipc_diff, 6.984728246115769%); (miss_latency_diff, -14.667899861101054%); (miss_rate, -17.69812124115174%）
+namd: (ipc_diff, 7.9674981954115545%); (miss_latency_diff, -15.104989204886158%); (miss_rate, -27.312687407632687%）
+gobmk: (ipc_diff, 0.4157793444046583%); (miss_latency_diff, -0.49639987221389426%); (miss_rate, -5.607476635514015%）
+leslie3d: (ipc_diff, 0.4453282920306377%); (miss_latency_diff, -17.543379245506905%); (miss_rate, -34.597616889116374%）
+bwaves: (ipc_diff, 0.06649777196324462%); (miss_latency_diff, -8.128915239069292%); (miss_rate, -26.768488745980715%）
+lbm: (ipc_diff, 0.005639680794072696%); (miss_latency_diff, -1.764321298010074%); (miss_rate, -6.7829457364341055%）
+povray: (ipc_diff, 0.7489246673310598%); (miss_latency_diff, -6.05675179237008%); (miss_rate, -19.106145251396644%）
+tonto: (ipc_diff, 19.3386105237034%); (miss_latency_diff, -30.84714765105857%); (miss_rate, -40.564522018549624%）
+gcc: (ipc_diff, 1.226571261703188%); (miss_latency_diff, -4.343821701191905%); (miss_rate, -13.662978083369149%）
+sjeng: (ipc_diff, 0.00369368550256434%); (miss_latency_diff, -1.7755705596785893%); (miss_rate, -3.9987664473684257%）
+hmmer: (ipc_diff, 21.303852571843365%); (miss_latency_diff, -40.88613450859988%); (miss_rate, -49.253228523301516%）
+GemsFDTD: (ipc_diff, 1.667768109556852%); (miss_latency_diff, -1.1657062643996765%); (miss_rate, -11.76538644298907%）
+milc: (ipc_diff, 0.3364252996666007%); (miss_latency_diff, -5.2817629304998555%); (miss_rate, -20.617283950617274%）
+calculix: (ipc_diff, 0.24316383727576946%); (miss_latency_diff, 0.4185189080863832%); (miss_rate, -4.6905357881211645%）
+
+data_temp_64:
+xalancbmk: (ipc_diff, 0.20299022494824098%); (miss_latency_diff, -1.1915767230276204%); (miss_rate, -5.88957541191381%）
+mcf: (ipc_diff, 0.31411465110995745%); (miss_latency_diff, -1.4588722467924986%); (miss_rate, 0.0%）
+gromacs: (ipc_diff, 0.002548156170106143%); (miss_latency_diff, -0.5291212976752999%); (miss_rate, -2.038014783526914%）
+povray: (ipc_diff, 0.10666810691114241%); (miss_latency_diff, -2.417216543585167%); (miss_rate, -3.329946064253897%）
+tonto: (ipc_diff, 0.5559013008417711%); (miss_latency_diff, -1.9190144000462024%); (miss_rate, -6.230382925298185%）
+
+data_fit_16:
+xalancbmk: (ipc_diff, 15.58569963940714%); (miss_latency_diff, -25.36967052365398%); (miss_rate, -37.52996346523687%）
+mcf: (ipc_diff, 32.31528014606953%); (miss_latency_diff, -47.94496022511321%); (miss_rate, -52.0866908190761%）
+omnetpp: (ipc_diff, 0.007345260875022281%); (miss_latency_diff, -0.4184646023993551%); (miss_rate, -2.748226950354609%）
+astar: (ipc_diff, 0.015640374640114103%); (miss_latency_diff, -1.6605835521120147%); (miss_rate, -7.075471698113214%）
+gobmk: (ipc_diff, 0.1905640327351539%); (miss_latency_diff, 0.05813880006572212%); (miss_rate, -1.0152284263959364%）
+leslie3d: (ipc_diff, 0.12567662074788197%); (miss_latency_diff, -5.90353736673267%); (miss_rate, -18.641021195835656%）
+gromacs: (ipc_diff, 0.12913712628133694%); (miss_latency_diff, -3.224366767140169%); (miss_rate, -12.34276729559747%）
+povray: (ipc_diff, 0.35391483269729307%); (miss_latency_diff, -5.911823237276322%); (miss_rate, -17.592973788939208%）
+tonto: (ipc_diff, 10.17923205286658%); (miss_latency_diff, -23.77055319345063%); (miss_rate, -32.47403801850123%）
+gcc: (ipc_diff, 1.3913811325256125%); (miss_latency_diff, -4.872224647047074%); (miss_rate, -16.125223385243814%）
+sjeng: (ipc_diff, 0.01051429091054022%); (miss_latency_diff, -1.2281408835449272%); (miss_rate, -1.7141609345998567%）
+hmmer: (ipc_diff, 1.6218736395680404%); (miss_latency_diff, -15.105645223791058%); (miss_rate, -27.40718382130999%）
+GemsFDTD: (ipc_diff, 1.699390478859423%); (miss_latency_diff, -2.0660524301063914%); (miss_rate, -10.435403209540704%）
+milc: (ipc_diff, 0.040432812132264476%); (miss_latency_diff, -2.876066457117198%); (miss_rate, -13.06451612903226%）
+calculix: (ipc_diff, 0.2617953624821425%); (miss_latency_diff, -0.5019907518960908%); (miss_rate, -3.299188985871656%）
+
+data_temp_cons_16:
+libquantum: (ipc_diff, 0.0006626965121067571%); (miss_latency_diff, 0.430002543023773%); (miss_rate, -0.9825269531042418%）
+xalancbmk: (ipc_diff, 0.8735299924381003%); (miss_latency_diff, -2.26178976724221%); (miss_rate, -8.805421548357447%）
+mcf: (ipc_diff, 17.807672373701593%); (miss_latency_diff, -30.28466993368058%); (miss_rate, -33.04189226246277%）
+namd: (ipc_diff, 2.6883618679634917%); (miss_latency_diff, -7.5699645732073595%); (miss_rate, -13.041956293444024%）
+omnetpp: (ipc_diff, 0.14080988394540359%); (miss_latency_diff, 1.8225965196864797%); (miss_rate, -0.8172550341225029%）
+astar: (ipc_diff, 0.059348395546821454%); (miss_latency_diff, -3.722838267646624%); (miss_rate, -1.918904860379848%）
+leslie3d: (ipc_diff, 0.2550532423643386%); (miss_latency_diff, -3.130476719501535%); (miss_rate, -7.335292787700662%）
+gromacs: (ipc_diff, 0.3311087312439711%); (miss_latency_diff, -0.4552581398594234%); (miss_rate, -3.918830101873151%）
+povray: (ipc_diff, 1.509214096348246%); (miss_latency_diff, -4.607175116021995%); (miss_rate, -12.072110741495862%）
+tonto: (ipc_diff, 2.049214964909271%); (miss_latency_diff, -4.1107213382548204%); (miss_rate, -11.435807090949123%）
+hmmer: (ipc_diff, 1.645277726652542%); (miss_latency_diff, -5.449008726492269%); (miss_rate, -14.402679568291775%）
+GemsFDTD: (ipc_diff, 0.6849044079181525%); (miss_latency_diff, -0.20272702679864976%); (miss_rate, -4.765835929387328%）
+calculix: (ipc_diff, 0.11261205883365723%); (miss_latency_diff, 1.4505990416659609%); (miss_rate, -2.028037672398671%）
+
+data_64:
+xalancbmk: (ipc_diff, 1.179012330449139%); (miss_latency_diff, -8.454043985856645%); (miss_rate, -16.160329282634255%）
+mcf: (ipc_diff, 0.10753491970200303%); (miss_latency_diff, -1.4020877245227426%); (miss_rate, 0.4210526315789462%）
+sphinx3: (ipc_diff, 0.012152420999392899%); (miss_latency_diff, -0.31246652367579564%); (miss_rate, -5.256368913253787%）
+povray: (ipc_diff, 0.08743497209193613%); (miss_latency_diff, -3.2851952944264036%); (miss_rate, -8.528198074277872%）
+wrf: (ipc_diff, 0.013104785867799902%); (miss_latency_diff, -0.135910427925954%); (miss_rate, -1.8751323566216866%）
+tonto: (ipc_diff, 1.0118673909482965%); (miss_latency_diff, -9.113026903583505%); (miss_rate, -16.0885123785876%）
+gcc: (ipc_diff, 0.02671439470108059%); (miss_latency_diff, -0.25921106441194103%); (miss_rate, -0.0839630562552467%）
+h264ref: (ipc_diff, 0.005220414776736725%); (miss_latency_diff, -0.8041492323967332%); (miss_rate, -1.3364779874213792%）
+
+data_temp_cons_8:
+libquantum: (ipc_diff, 0.9871163454343804%); (miss_latency_diff, -1.6226576085631619%); (miss_rate, -9.594757716847733%）
+xalancbmk: (ipc_diff, 3.9262114228288185%); (miss_latency_diff, -7.3251895402021905%); (miss_rate, -16.789752380505092%）
+mcf: (ipc_diff, 18.527168096976226%); (miss_latency_diff, -28.048454789160186%); (miss_rate, -31.55027136612253%）
+namd: (ipc_diff, 7.112777003779896%); (miss_latency_diff, -9.60490935330061%); (miss_rate, -13.92551237086346%）
+astar: (ipc_diff, 0.12158836179767439%); (miss_latency_diff, -1.8629395025381499%); (miss_rate, -1.2237333561428914%）
+leslie3d: (ipc_diff, 2.2640171414879093%); (miss_latency_diff, -11.086464286477101%); (miss_rate, -19.34481469224257%）
+bwaves: (ipc_diff, 0.20794747786709122%); (miss_latency_diff, -5.454756917322637%); (miss_rate, -13.289283501961602%）
+povray: (ipc_diff, 5.475498047225888%); (miss_latency_diff, -10.359326595422129%); (miss_rate, -18.470666713478206%）
+bzip2: (ipc_diff, 0.4794334506310224%); (miss_latency_diff, -0.6561123621171117%); (miss_rate, -1.4414077124672533%）
+tonto: (ipc_diff, 4.558449763581454%); (miss_latency_diff, -8.802977287687975%); (miss_rate, -15.580457677629887%）
+sjeng: (ipc_diff, 0.007658636880462669%); (miss_latency_diff, -0.47351190383824415%); (miss_rate, -2.0576982731878943%）
+hmmer: (ipc_diff, 11.159871173170682%); (miss_latency_diff, -15.043430904302332%); (miss_rate, -19.359617682198323%）
+h264ref: (ipc_diff, 0.4891994444258269%); (miss_latency_diff, 2.899031523813228%); (miss_rate, 2.6439989850291834%）
+GemsFDTD: (ipc_diff, 2.748176450156302%); (miss_latency_diff, -1.5102300472279588%); (miss_rate, -8.874237036360842%）
+milc: (ipc_diff, 0.6146471637798758%); (miss_latency_diff, -2.078288692259533%); (miss_rate, -5.81424302788844%）
+calculix: (ipc_diff, 0.5812868034776362%); (miss_latency_diff, -0.5033435475016367%); (miss_rate, -3.7339504661875025%）
+
+data_mem_8:
+namd: (ipc_diff, 7.9674981954115545%); (miss_latency_diff, -15.104989204886158%); (miss_rate, -27.312687407632687%）
+sjeng: (ipc_diff, 0.00369368550256434%); (miss_latency_diff, -1.7755705596785893%); (miss_rate, -3.9987664473684257%）
+tonto: (ipc_diff, 19.3386105237034%); (miss_latency_diff, -30.84714765105857%); (miss_rate, -40.564522018549624%）
+xalancbmk: (ipc_diff, 12.995128909486185%); (miss_latency_diff, -20.058416913482706%); (miss_rate, -32.98097161688104%）
+leslie3d: (ipc_diff, 0.4453282920306377%); (miss_latency_diff, -17.543379245506905%); (miss_rate, -34.597616889116374%）
+lbm: (ipc_diff, 0.005639680794072696%); (miss_latency_diff, -1.764321298010074%); (miss_rate, -6.7829457364341055%）
+gcc: (ipc_diff, 1.226571261703188%); (miss_latency_diff, -4.343821701191905%); (miss_rate, -13.662978083369149%）
+hmmer: (ipc_diff, 21.303852571843365%); (miss_latency_diff, -40.88613450859988%); (miss_rate, -49.253228523301516%）
+GemsFDTD: (ipc_diff, 1.667768109556852%); (miss_latency_diff, -1.1657062643996765%); (miss_rate, -11.76538644298907%）
+calculix: (ipc_diff, 0.24316383727576946%); (miss_latency_diff, 0.4185189080863832%); (miss_rate, -4.6905357881211645%）
+milc: (ipc_diff, 0.3364252996666007%); (miss_latency_diff, -5.2817629304998555%); (miss_rate, -20.617283950617274%）
+povray: (ipc_diff, 0.7489246673310598%); (miss_latency_diff, -6.05675179237008%); (miss_rate, -19.106145251396644%）
+bwaves: (ipc_diff, 0.06649777196324462%); (miss_latency_diff, -8.128915239069292%); (miss_rate, -26.768488745980715%）
+libquantum: (ipc_diff, 0.11709098525170174%); (miss_latency_diff, 0.5186064038563423%); (miss_rate, -9.590565198041833%）
+gobmk: (ipc_diff, 0.4157793444046583%); (miss_latency_diff, -0.49639987221389426%); (miss_rate, -5.607476635514015%）
+mcf: (ipc_diff, 6.984728246115769%); (miss_latency_diff, -14.667899861101054%); (miss_rate, -17.69812124115174%）
+
+data_mem_64:
+tonto: (ipc_diff, 1.538727347334993%); (miss_latency_diff, -12.49720180042668%); (miss_rate, -23.248175182481752%）
+xalancbmk: (ipc_diff, 2.03705315286764%); (miss_latency_diff, -11.552571321693165%); (miss_rate, -23.711415972562477%）
+gcc: (ipc_diff, 0.05427194594236841%); (miss_latency_diff, 0.15212248551837007%); (miss_rate, -2.4342473419138178%）
+hmmer: (ipc_diff, 0.07037172925901494%); (miss_latency_diff, -1.0532046483513404%); (miss_rate, -1.478260869565225%）
+povray: (ipc_diff, 0.0984758145411678%); (miss_latency_diff, -2.3960441836523763%); (miss_rate, -10.758620689655165%）
+astar: (ipc_diff, 0.00022744365462341735%); (miss_latency_diff, -1.1421191998056976%); (miss_rate, -4.293381037567091%）
+
+data_temp_8:
+libquantum: (ipc_diff, 0.9831847210264849%); (miss_latency_diff, -2.0817734596554254%); (miss_rate, -5.72167615106053%）
+mcf: (ipc_diff, 4.00546205615642%); (miss_latency_diff, -5.851964574137079%); (miss_rate, -7.824213882964121%）
+astar: (ipc_diff, 0.09195008271042636%); (miss_latency_diff, -0.8977632951604503%); (miss_rate, 0.26288027827674676%）
+leslie3d: (ipc_diff, 1.8799403316661767%); (miss_latency_diff, -8.422100917515172%); (miss_rate, -14.943245066984153%）
+bzip2: (ipc_diff, 0.4778401443383693%); (miss_latency_diff, -1.2560128505135157%); (miss_rate, -1.909397229502069%）
+tonto: (ipc_diff, 2.971555727368111%); (miss_latency_diff, -6.4590313176311644%); (miss_rate, -10.017934921854991%）
+gcc: (ipc_diff, 0.15381580152618293%); (miss_latency_diff, -0.6412330222367914%); (miss_rate, -0.08676789587853645%）
+sjeng: (ipc_diff, 0.007658636880462669%); (miss_latency_diff, -0.3970654037005035%); (miss_rate, -3.3502223141350567%）
+hmmer: (ipc_diff, 14.257752491776445%); (miss_latency_diff, -17.574929018793426%); (miss_rate, -21.045912271718716%）
+GemsFDTD: (ipc_diff, 0.9998842190575404%); (miss_latency_diff, -0.6806476183636573%); (miss_rate, -2.8763366127111483%）
+milc: (ipc_diff, 0.09546248527440827%); (miss_latency_diff, -1.9682860617437985%); (miss_rate, -4.046314741035843%）
+
+data_cons_64:
+xalancbmk: (ipc_diff, 0.8918254541985517%); (miss_latency_diff, -5.253954392729821%); (miss_rate, -11.003038024304182%）
+mcf: (ipc_diff, 0.10753491970200303%); (miss_latency_diff, -1.4020877245227426%); (miss_rate, 0.4210526315789462%）
+povray: (ipc_diff, 0.10652247108422024%); (miss_latency_diff, -3.40461278094674%); (miss_rate, -7.427785419532336%）
+tonto: (ipc_diff, 1.1915729468071554%); (miss_latency_diff, -10.466154757420592%); (miss_rate, -17.256992623968454%）
+gcc: (ipc_diff, 0.10559448685627264%); (miss_latency_diff, -0.7000679776063828%); (miss_rate, -3.974251329415051%）
+h264ref: (ipc_diff, 0.005220414776736725%); (miss_latency_diff, -0.7676690897041792%); (miss_rate, -1.0482180293501075%）
+
+data:
+mcf: (ipc_diff, 3.153252942796589%); (miss_latency_diff, -3.9954304048663762%); (miss_rate, -6.5086007219377695%）
+gobmk: (ipc_diff, 1.3754286425658506%); (miss_latency_diff, 0.44007608671183845%); (miss_rate, 1.82481751824818%）
+sphinx3: (ipc_diff, 0.4059221666810748%); (miss_latency_diff, -1.1146037836936546%); (miss_rate, -2.9341051796176427%）
+lbm: (ipc_diff, 0.020706291606711037%); (miss_latency_diff, -0.3393189075297388%); (miss_rate, 1.5421115065243167%）
+bzip2: (ipc_diff, 0.07740096648774225%); (miss_latency_diff, -3.402675194988953%); (miss_rate, -7.349081364829385%）
+hmmer: (ipc_diff, 0.35287365280917077%); (miss_latency_diff, -1.137683003406676%); (miss_rate, -1.3445585236259554%）
+h264ref: (ipc_diff, 22.30046030369462%); (miss_latency_diff, -24.539707964805537%); (miss_rate, -26.82380476128016%）
+
+data_fit_4:
+libquantum: (ipc_diff, 0.1602247243253273%); (miss_latency_diff, -2.585097597357285%); (miss_rate, -13.325899080011155%）
+xalancbmk: (ipc_diff, 7.045784674214062%); (miss_latency_diff, -10.715033796501784%); (miss_rate, -23.479810168613028%）
+mcf: (ipc_diff, 38.66830393819154%); (miss_latency_diff, -39.91395452471698%); (miss_rate, -49.46524965124978%）
+namd: (ipc_diff, 28.822565794980328%); (miss_latency_diff, -29.773733573980582%); (miss_rate, -44.206937985946205%）
+gobmk: (ipc_diff, 0.05038539098490797%); (miss_latency_diff, -0.3293387982739762%); (miss_rate, -6.103763987792466%）
+leslie3d: (ipc_diff, 0.5463664911146336%); (miss_latency_diff, -19.908897794713443%); (miss_rate, -36.39037181592213%）
+bwaves: (ipc_diff, 0.1353468897357064%); (miss_latency_diff, -8.45311759575301%); (miss_rate, -25.56834957189253%）
+lbm: (ipc_diff, 0.007519574392096928%); (miss_latency_diff, -1.0734178127872813%); (miss_rate, -7.3170731707317085%）
+tonto: (ipc_diff, 17.26934454998111%); (miss_latency_diff, -25.064327248151184%); (miss_rate, -35.14942458561006%）
+gcc: (ipc_diff, 9.887427536559274%); (miss_latency_diff, -16.74386135284375%); (miss_rate, -28.73666367534151%）
+hmmer: (ipc_diff, 7.957848416420589%); (miss_latency_diff, -9.831533656014074%); (miss_rate, -27.92682014549942%）
+h264ref: (ipc_diff, 4.945276147141154%); (miss_latency_diff, -10.230256997379904%); (miss_rate, -14.532172190350414%）
+GemsFDTD: (ipc_diff, 2.6182289475338654%); (miss_latency_diff, -2.744158521686011%); (miss_rate, -12.940459535877283%）
+
+data_cons_4:
+libquantum: (ipc_diff, 0.24317639060582458%); (miss_latency_diff, -3.097212611910948%); (miss_rate, -11.456013363028953%）
+xalancbmk: (ipc_diff, 16.732897992595476%); (miss_latency_diff, -19.934008193220205%); (miss_rate, -24.263500599306752%）
+mcf: (ipc_diff, 32.397955716246905%); (miss_latency_diff, -34.27645372804837%); (miss_rate, -32.96379912614708%）
+namd: (ipc_diff, 29.502218077028854%); (miss_latency_diff, -28.243794884786407%); (miss_rate, -28.700895706331572%）
+astar: (ipc_diff, 2.833747259256178%); (miss_latency_diff, -8.38347555495506%); (miss_rate, -13.68895939715433%）
+bwaves: (ipc_diff, 0.07106478739784072%); (miss_latency_diff, -7.938117173026348%); (miss_rate, -16.710953646294648%）
+povray: (ipc_diff, 2.7069997649693827%); (miss_latency_diff, -12.780492332810683%); (miss_rate, -16.52458517278125%）
+tonto: (ipc_diff, 15.907435109796618%); (miss_latency_diff, -23.30921175096587%); (miss_rate, -24.66405768256274%）
+gcc: (ipc_diff, 12.826150139831697%); (miss_latency_diff, -18.950757625989343%); (miss_rate, -22.91013567836065%）
+hmmer: (ipc_diff, 21.64292789166084%); (miss_latency_diff, -27.93758189760162%); (miss_rate, -31.378168862622616%）
+h264ref: (ipc_diff, 2.0450879674433637%); (miss_latency_diff, -4.11286190784211%); (miss_rate, -4.251242836143822%）
+GemsFDTD: (ipc_diff, 4.298425204490548%); (miss_latency_diff, -2.832873563542731%); (miss_rate, -11.451032267830238%）
+calculix: (ipc_diff, 1.0536989222583537%); (miss_latency_diff, -1.3616373909517947%); (miss_rate, -4.499496666474592%）
+
+data_4:
+libquantum: (ipc_diff, 0.06687697015237025%); (miss_latency_diff, -0.8337474529904126%); (miss_rate, -0.8630289532294045%）
+xalancbmk: (ipc_diff, 0.5763613700210105%); (miss_latency_diff, -1.8228082646878614%); (miss_rate, -3.469176196183881%）
+mcf: (ipc_diff, 30.32173002949531%); (miss_latency_diff, -31.472541487167373%); (miss_rate, -29.342139254866286%）
+namd: (ipc_diff, 23.881814159821115%); (miss_latency_diff, -24.624240427253717%); (miss_rate, -26.181253988864203%）
+sphinx3: (ipc_diff, 4.768883507481647%); (miss_latency_diff, -15.52921620828939%); (miss_rate, -18.79778051787915%）
+bwaves: (ipc_diff, 0.027995219277936804%); (miss_latency_diff, -2.9838239481931463%); (miss_rate, -3.661056982580454%）
+tonto: (ipc_diff, 7.085222276781131%); (miss_latency_diff, -11.030674093266068%); (miss_rate, -11.339922951530289%）
+gcc: (ipc_diff, 2.7279127295274246%); (miss_latency_diff, -6.1186785818069%); (miss_rate, -9.454481997843615%）
+hmmer: (ipc_diff, 12.225227782186362%); (miss_latency_diff, -16.701019322291465%); (miss_rate, -4.946277784531371%）
+milc: (ipc_diff, 0.06518025371793343%); (miss_latency_diff, -1.8577659660222503%); (miss_rate, -1.9927536231883953%）
 
