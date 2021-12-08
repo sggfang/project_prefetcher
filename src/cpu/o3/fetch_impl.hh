@@ -572,12 +572,12 @@ DefaultFetch<Impl>::lookupAndUpdateNextPC(
                                         nextPC, tid);
 
         // Ni: Send nextPC to FTQ
-                //setPC::enqueuePC.push_back(nextPC.pc());
-        if (setPC::enqueuePC.size() < 64) {
-                                for (int i = 0; i < 64; i++) {
-                        setPC::enqueuePC.push_back(nextPC.pc() + 64 * i);
-                                }
-                }
+                // setPC::enqueuePC.push_back(nextPC.pc());
+        // if (setPC::enqueuePC.size() < 256) {
+                // 		for (int i = 0; i < 256; i++) {
+        //         	setPC::enqueuePC.push_back(nextPC.pc() + 4 * i);
+                // 		}
+                // }
 
     if (predict_taken) {
         DPRINTF(Fetch, "[tid:%i] [sn:%llu] Branch at PC %#x "
@@ -1347,8 +1347,11 @@ DefaultFetch<Impl>::fetch(bool &status_change)
 
             nextPC = thisPC;
 
-                        // Ni: update currentPC
-                        setPC::currentPC = thisPC.pc();
+            // Ni: update currentPC
+                        // setPC::currentPC = thisPC;
+            // setPC::instPtr = instruction->staticInst;
+            // setPC::instSeq = instruction->seqNum;
+            // setPC::tid = instruction->threadNumber;
 
             // If we're branching after this instruction, quit fetching
             // from the same block.
@@ -1358,6 +1361,12 @@ DefaultFetch<Impl>::fetch(bool &status_change)
             if (predictedBranch) {
                 DPRINTF(Fetch, "Branch detected with PC = %s\n", thisPC);
             }
+
+            // Ni: update currentPC
+                        setPC::currentPC = nextPC;
+            setPC::instPtr = instruction->staticInst;
+            setPC::instSeq = instruction->seqNum;
+            setPC::tid = instruction->threadNumber;
 
             newMacro |= thisPC.instAddr() != nextPC.instAddr();
 
@@ -1380,6 +1389,12 @@ DefaultFetch<Impl>::fetch(bool &status_change)
                 quiesce = true;
                 break;
             }
+
+            if (setPC::enqueuePC.size() < 256) {
+                for (int i = 0; i < 4; i++)
+                setPC::enqueuePC.push_back(nextPC.pc()+64*i);
+            }
+
         } while ((curMacroop || decoder[tid]->instReady()) &&
                  numInst < fetchWidth &&
                  fetchQueue[tid].size() < fetchQueueSize);

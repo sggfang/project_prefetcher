@@ -21,9 +21,10 @@
 namespace Prefetcher {
 
 FDIP::FDIP(const FDIPPrefetcherParams *p)
-  : Queued(p)
-  //enqueuePC(nullptr)
+  : Queued(p),
+  branchPred(nullptr)
 {
+        branchPred = p->branchPred;
 }
 
 /*void
@@ -36,19 +37,25 @@ void
 FDIP::calculatePrefetch(const PrefetchInfo &pfi,
                                     std::vector<AddrPriority> &addresses)
 {
-                //addresses.push_back(AddrPriority(pfi.getPaddr(),0));
-                if (setPC::enqueuePC.empty() && setPC::currentPC != -1) {
-                    addresses.push_back(AddrPriority(setPC::currentPC, 0));
-                    setPC::currentPC += 4;
-                }
-                else {
-                    for (std::list<Addr>::iterator
-                                            it = setPC::enqueuePC.begin();
+
+        if (setPC::instSeq != -1 && setPC::tid != -1) {
+                TheISA::PCState nextPC;
+                nextPC = setPC::currentPC;
+                branchPred->predict(setPC::instPtr, setPC::instSeq,
+                        nextPC, setPC::tid);
+                // DPRINTF(Prefetcher,
+                //             "[tid:%i] [sn:%llu]\n",
+                //             setPC::tid, setPC::instSeq);
+                addresses.push_back(AddrPriority(nextPC.pc(), 0));
+
+        }
+        if (!setPC::enqueuePC.empty()) {
+                for (std::list<Addr>::iterator it = setPC::enqueuePC.begin();
                         it!=setPC::enqueuePC.end(); it++) {
                         addresses.push_back(AddrPriority(*it, 0));
-                    }
                 }
-        setPC::enqueuePC.clear();
+                setPC::enqueuePC.clear();
+        }
 }
 
 } // namespace prefetcher

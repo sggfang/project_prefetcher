@@ -44,6 +44,9 @@ from m5.objects.ClockedObject import ClockedObject
 from m5.objects.IndexingPolicies import *
 from m5.objects.ReplacementPolicies import *
 
+# Ni
+from m5.objects.BranchPredictor import *
+
 class HWPProbeEvent(object):
     def __init__(self, prefetcher, obj, *listOfNames):
         self.obj = obj
@@ -179,6 +182,10 @@ class FDIPPrefetcher(QueuedPrefetcher):
     type = 'FDIPPrefetcher'
     cxx_class = 'Prefetcher::FDIP'
     cxx_header = "mem/cache/prefetch/fdip.hh"
+
+    branchPred = Param.BranchPredictor(TournamentBP(numThreads =
+                                                       Parent.numThreads),
+                                       "Branch Predictor")
 
 class TaggedPrefetcher(QueuedPrefetcher):
     type = 'TaggedPrefetcher'
