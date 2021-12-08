@@ -1,7 +1,7 @@
 ECE 565 Project, this branch is for the Fetch Directed Instruction Prefetching
 
-Files Added: fdip.cc, fdip.hh, setPC.cc, setPC.hhi <br />
-Files Modified: Prefetcher.py (Added a FDIPPrefetcher Class, and let prefetcher to use virtual address) <br />
-				fetch_impl.hh (Modified function DefaultFetch::fetch())<br />
+Files Added: fdip.cc, fdip.hh, setPC.cc, setPC.hh
+Files Modified: Prefetcher.py (Added a FDIPPrefetcher Class, and let prefetcher to use virtual address)
+				fetch_impl.hh (Modified function DefaultFetch::fetch())
 
 Command: ./build/ARM/gem5.opt -d out_fdip configs/spec2k6/run.py -W 10000000 --maxinsts=1000000000 --cpu-type=DerivO3CPU --l1d_size=64kB --l1i_size=64kB --caches --l2cache -b calculix -l1i-hwp-type FDIPPrefetcher
