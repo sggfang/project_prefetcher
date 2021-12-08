@@ -1,37 +1,52 @@
-This is the gem5 simulator.
+# Run the program  
+1. build the program  
+```
+scons-3 -j 4 ./build/ARM/gem5.opt  
+```  
+2. run all benchmarks. The data will be placed on current directory.  
+```
+sh run.sh
+```
 
-The main website can be found at http://www.gem5.org
+# Modification of code  
+./SimPoint.3.2  
+simpoint directory  
 
-A good starting point is http://www.gem5.org/about, and for
-more information about building the simulator and getting started
-please see http://www.gem5.org/documentation and
-http://www.gem5.org/documentation/learning_gem5/introduction.
+./configs/common/Caches.py: 57, 70, 74  
+Set the parameters of icache and L2 cache.  
 
-To build gem5, you will need the following software: g++ or clang,
-Python (gem5 links in the Python interpreter), SCons, SWIG, zlib, m4,
-and lastly protobuf if you want trace capture and playback
-support. Please see http://www.gem5.org/documentation/general_docs/building
-for more details concerning the minimum versions of the aforementioned tools.
+./data*  
+All folders started with data are our simulated results.  
 
-Once you have all dependencies resolved, type 'scons
-build/<ARCH>/gem5.opt' where ARCH is one of ARM, NULL, MIPS, POWER, SPARC,
-or X86. This will build an optimized version of the gem5 binary (gem5.opt)
-for the the specified architecture. See
-http://www.gem5.org/documentation/general_docs/building for more details and
-options.
+./src/mem/AbstractMemory.py: 49  
+Set the memory to 3GB  
 
-The basic source release includes these subdirectories:
-   - configs: example simulation configuration scripts
-   - ext: less-common external packages needed to build gem5
-   - src: source code of the gem5 simulator
-   - system: source for some optional system software for simulated systems
-   - tests: regression tests
-   - util: useful utility programs and files
+./src/mem/SimpleMemory.py: 46, 50  
+Set the memory bandwidth and access latency  
 
-To run full-system simulations, you will need compiled system firmware
-(console and PALcode for Alpha), kernel binaries and one or more disk
-images.
+./src/mem/packet.hh: 322-323  
+Add flag to indicate the block is from SVB. This may be used for prefetcher latter.  
 
-If you have questions, please send mail to gem5-users@gem5.org
+./src/mem/cache/Sconscript: 41  
 
-Enjoy using gem5 and please share your modifications and extensions.
+./src/mem/cache/base.cc: 370  
+Add blocks to IML when hitting in SVB
+
+./src/mem/cache/base.hh: 1237-1238  
+set the address in IML to true when hitting in icache.  
+
+./src/mem/cache/iml.hh iml.cc  
+IML data structure used for TIFS  
+
+./src/mem/cache/prefetch/Prefetcher.py: 168, class TIFSPrefetcher
+Set the entry number of StridePrefetcher to 32  
+Init TIFS prefetcher  
+
+./src/mem/cache/prefetch/Sconscript: 49  
+
+./src/mem/cache/prefetch/base.cc base.hh: Base::PrefetchInfo::PrefetchInfo, Base::probeNotify  
+
+./src/mem/cache/prefetch/queue.cc queue.hh: Queued::checkInQueue  
+
+./src/mem/cache/prefetch/tifs.cc tifs.hh
+TIFS prefetcher  
