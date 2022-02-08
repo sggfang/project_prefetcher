@@ -38,6 +38,43 @@ struct members{
 		int N;
 };
 
+int write_to_file(char * filename, double *data, int num) {
+    FILE * fp;
+    int write_count;
+    fp = fopen(filename, "w");
+    if (fp ==NULL) {
+	printf("file not found: %s\n", filename);
+	exit(-1);
+    }
+    write_count = fwrite( (const void*) data, sizeof(double),num,fp);
+    if (write_count == num) {
+	fclose(fp);
+	return 1;
+    } else {
+	fclose(fp);
+	return -1;
+    }
+} 
+
+int read_from_file(char * filename, double *data, int num) {
+    FILE * fp;
+    int read_count;
+    fp = fopen(filename, "rb");
+    if (fp ==NULL) {
+	printf("file not found: %s\n", filename);
+	exit(-1);
+    }
+    read_count = fread( (void*) data, sizeof(double),num,fp);
+    if (read_count == num) {
+	fclose(fp);
+	return 1;
+    } else {
+	printf("%d\n", read_count);
+	fclose(fp);
+	return -1;
+    }
+} 
+
 void create_mat(int x, int y, double* mat){
 		int i, j;
 		for (i = 0; i < x; i++){
@@ -141,9 +178,12 @@ void matmult(int N, double *a, double *b, double *c) {
 		printf("Total time: %5.6f ms\n", elapsed);
 }
 
-/*
 int main(){
 		int N[] = {128, 512, 1000};
+		char *file_a[] = {"a_128.bin", "a_512.bin", "a_1000.bin"};
+		char *file_b[] = {"b_128.bin", "b_512.bin", "b_1000.bin"};
+		int write_success = 0;
+		int read_success = 0;
 		int i;
 		int leng = 3;
 		for (i=0;i<leng;i++){
@@ -151,14 +191,24 @@ int main(){
 				double *a;
 				a = (double *)malloc(mat_size*mat_size*sizeof(double));
 				create_mat(mat_size, mat_size, a);
+				write_success = write_to_file(file_a[i], a, mat_size);
+				if(write_success ==1) printf("Successfully written.\n");
+
 				double *b;
 				b = (double *)malloc(mat_size*mat_size*sizeof(double));
 				create_mat(mat_size, mat_size, b);
+				write_success = write_to_file(file_b[i], b, mat_size);
+				if(write_success ==1) printf("Successfully written.\n");
 
 				double *c;
 				c = (double *)malloc(mat_size*mat_size*sizeof(double));
+				read_success = read_from_file(file_a[i], a, mat_size);
+				if(read_success ==1) printf("Successfully read.\n");
+
+				read_success = read_from_file(file_b[i], b, mat_size);
+				if(read_success ==1) printf("Successfully read.\n");
+
 				matmult(mat_size, a, b, c);
 		}
 		return 0;
 }
-*/

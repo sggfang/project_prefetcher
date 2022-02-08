@@ -28,6 +28,43 @@ void create_arr(int N, int *arr){
 		// printf("create new array\n");
 }
 
+int write_to_file(char * filename, int *data, int num) {
+    FILE * fp;
+    int write_count;
+    fp = fopen(filename, "w");
+    if (fp ==NULL) {
+	printf("file not found: %s\n", filename);
+	exit(-1);
+    }
+    write_count = fwrite( (const void*) data, sizeof(int),num,fp);
+    if (write_count == num) {
+	fclose(fp);
+	return 1;
+    } else {
+	fclose(fp);
+	return -1;
+    }
+} 
+
+int read_from_file(char * filename, int *data, int num) {
+    FILE * fp;
+    int read_count;
+    fp = fopen(filename, "rb");
+    if (fp ==NULL) {
+	printf("file not found: %s\n", filename);
+	exit(-1);
+    }
+    read_count = fread( (void*) data, sizeof(int),num,fp);
+    if (read_count == num) {
+	fclose(fp);
+	return 1;
+    } else {
+	printf("%d\n", read_count);
+	fclose(fp);
+	return -1;
+    }
+} 
+
 void merge(int *arr, int *temp_arr, int head_1, int head_2, int right){
 		int index_1 = head_1;
 		int index_2 = head_2 + 1;
@@ -127,10 +164,12 @@ void sort(int N, int *arr){
 		MPI_Barrier(MPI_COMM_WORLD);
 }
 
-/*
 int main(int argc, char* argv[])
 {
 		int N[] = {10000, 100000, 1000000};
+		char *file_name[] = {"a_10000.bin", "a_100000.bin", "a_1000000.bin"}; 
+		int write_success = 0;
+		int read_success = 0;
 		int leng = 3;
 		
 		MPI_Init(&argc, &argv);
@@ -141,6 +180,9 @@ int main(int argc, char* argv[])
 				int *arr;
 				arr = (int *)malloc(arr_size*sizeof(int));
 				create_arr(arr_size, arr);
+				write_success = write_to_file(file_name[i], arr, arr_size);
+
+				read_success = read_from_file(file_name[i], arr, arr_size);
 				sort(arr_size, arr);
 		}
 
@@ -148,4 +190,3 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-*/
