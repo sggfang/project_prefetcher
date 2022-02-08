@@ -178,37 +178,49 @@ void matmult(int N, double *a, double *b, double *c) {
 		printf("Total time: %5.6f ms\n", elapsed);
 }
 
-int main(){
-		int N[] = {128, 512, 1000};
-		char *file_a[] = {"a_128.bin", "a_512.bin", "a_1000.bin"};
-		char *file_b[] = {"b_128.bin", "b_512.bin", "b_1000.bin"};
+int main(int argc,char* argv[]){
+		if (argc!=4){
+				printf("Missing file names, 3 file name is required\n");
+				return 0;
+		}
+
+		char *file_a = argv[1];
+		char *file_b = argv[2];
+		char *file_c = argv[3];
+		
+		int N[] = {256};
 		int write_success = 0;
 		int read_success = 0;
 		int i;
-		int leng = 3;
+		int leng = 1;
 		for (i=0;i<leng;i++){
 				int mat_size = N[i];
 				double *a;
 				a = (double *)malloc(mat_size*mat_size*sizeof(double));
+				/*
 				create_mat(mat_size, mat_size, a);
 				write_success = write_to_file(file_a[i], a, mat_size);
 				if(write_success ==1) printf("Successfully written.\n");
-
+*/
 				double *b;
 				b = (double *)malloc(mat_size*mat_size*sizeof(double));
+				/*
 				create_mat(mat_size, mat_size, b);
 				write_success = write_to_file(file_b[i], b, mat_size);
 				if(write_success ==1) printf("Successfully written.\n");
-
+*/
 				double *c;
 				c = (double *)malloc(mat_size*mat_size*sizeof(double));
-				read_success = read_from_file(file_a[i], a, mat_size);
+
+				read_success = read_from_file(file_a, a, mat_size);
 				if(read_success ==1) printf("Successfully read.\n");
 
-				read_success = read_from_file(file_b[i], b, mat_size);
+				read_success = read_from_file(file_b, b, mat_size);
 				if(read_success ==1) printf("Successfully read.\n");
 
 				matmult(mat_size, a, b, c);
+				write_success = write_to_file(file_c, c, mat_size);
+				if(write_success ==1) printf("Successfully written.\n");
 		}
 		return 0;
 }
